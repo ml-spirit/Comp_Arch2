@@ -1,0 +1,4 @@
+/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/build/CMakeFiles/calculator_lib.dir
+/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/build/CMakeFiles/calculator.dir
+/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/build/CMakeFiles/edit_cache.dir
+/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/build/CMakeFiles/rebuild_cache.dir

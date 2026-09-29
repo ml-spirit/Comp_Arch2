@@ -1,0 +1,5 @@
+# ninja log v5
+716	1127	1790690054065264500	calculator	b5592a94d01f8ae3
+57	667	1790690053595205400	CMakeFiles/calculator.dir/main.cpp.o	2d1c522225bd17f4
+286	456	1790690053390369900	libcalculator_lib.a	876590854eabab7d
+55	274	1790690053194670900	CMakeFiles/calculator_lib.dir/calculator.cpp.o	1f36d68d232d9ec5
