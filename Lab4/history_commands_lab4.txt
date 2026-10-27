@@ -1,0 +1,768 @@
+Script started on 2026-10-27 16:52:10+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mpwd[27mpwd
+[?2004l/home/spirit
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls ~/repos[27mls ~/repos
+[?2004l[0m[01;34mbusybox[0m  [01;34mlinux-stable[0m  [01;34mu-boot[0m
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mexport KDIR=$HOME/repos/linux-stable[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexport KDIR=$HOME/repos/linux-stable
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $KDIR[27mecho $KDIR
+[?2004l/home/spirit/repos/linux-stable
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls $KDIR/Makefile[27mls $KDIR/Makefile
+[?2004l/home/spirit/repos/linux-stable/Makefile
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls $KDIR/scripts/checkpatch.pl[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls $KDIR/scripts/checkpatch.pl
+[?2004l[0m[01;32m/home/spirit/repos/linux-stable/scripts/checkpatch.pl[0m
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls $KDIR/.config[27mls $KDIR/.config
+[?2004l/home/spirit/repos/linux-stable/.config
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls $KDIR/include/generated/autoconf.h[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls $KDIR/include/generated/autoconf.h
+[?2004l/home/spirit/repos/linux-stable/include/generated/autoconf.h
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls $KDIR/Module.symvers[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls $KDIR/Module.symvers
+[?2004l/home/spirit/repos/linux-stable/Module.symvers
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $ARCH[27mecho $ARCH
+[?2004l
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $CROSS_COMPILE[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cecho $CROSS_COMPILE
+[?2004l
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mgrep '^CONFIG_MODVERSIONS=' $KDIR/.config[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep '^CONFIG_MODVERSIONS=' $KDIR/.config
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mmake -s -C "$KDIR" kernelrelease[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -s -C "$KDIR" kernelrelease
+[?2004l4.19.325
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mls /usr/bin/arm-linux-gnueabi*gcc[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls /usr/bin/arm-linux-gnueabi*gcc
+[?2004lls: cannot access '/usr/bin/arm-linux-gnueabi*gcc': No such file or directory
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mwhich arm-linux-gnueabihf-gcc[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cwhich arm-linux-gnueabihf-gcc
+[?2004l/opt/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mwhich arm-linux-gnueabi-gcc[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cwhich arm-linux-gnueabi-gcc
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mexport ARCH=arm[27mexport ARCH=arm
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mexport CROSS_COMPILE=arm-linux-gnueabihf-[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexport CROSS_COMPILE=arm-linux-gnueabihf-
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mexport KDIR=$HOME/repos/linux-stable[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexport KDIR=$HOME/repos/linux-stable
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $ARCH[27mecho $ARCH
+[?2004larm
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $CROSS_COMPILE[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cecho $CROSS_COMPILE
+[?2004larm-linux-gnueabihf-
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mecho $KDIR[27mecho $KDIR
+[?2004l/home/spirit/repos/linux-stable
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7m${CROSS_COMPILE}gcc --version[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C${CROSS_COMPILE}gcc --version
+[?2004larm-linux-gnueabihf-gcc (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36)) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mgrep -E '^(CONFIG_ARM|CONFIG_MODULES)=' "$KDIR/.config"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -E '^(CONFIG_ARM|CONFIG_MODULES)=' "$KDIR/.config"
+[?2004l[01;31m[KCONFIG_ARM=[m[Ky
+[01;31m[KCONFIG_MODULES=[m[Ky
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mcd "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2"
+[?2004l[?2004h]0;spirit@Mariia: /mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[01;32mspirit@Mariia[00m:[01;34m/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[00m$ [7mls -la[27mls -la
+[?2004ltotal 220
+drwxrwxrwx 1 spirit spirit    512 Sep 29 14:55 [0m[34;42m.[0m
+drwxrwxrwx 1 spirit spirit    512 Oct 27 16:52 [34;42m..[0m
+drwxrwxrwx 1 spirit spirit    512 Sep 29 14:51 [34;42m.git[0m
+-rwxrwxrwx 1 spirit spirit    375 Sep 29 13:35 [01;32mCMakeLists.txt[0m
+-rwxrwxrwx 1 spirit spirit    440 Sep 29 13:36 [01;32mMakefile[0m
+drwxrwxrwx 1 spirit spirit    512 Sep 29 13:54 [34;42mbuild[0m
+-rwxrwxrwx 1 spirit spirit    158 Sep 29 13:26 [01;32mcalculator.cpp[0m
+-rwxrwxrwx 1 spirit spirit    166 Sep 29 13:53 [01;32mcalculator.h[0m
+-rwxrwxrwx 1 spirit spirit    240 Sep 29 13:54 [01;32mmain.cpp[0m
+-rwxrwxrwx 1 spirit spirit 224467 Sep 29 14:54 [01;32mІО-41_Лозінська_Марія_Лаб2.docx[0m
+[?2004h]0;spirit@Mariia: /mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[01;32mspirit@Mariia[00m:[01;34m/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[00m$ [7mfind . -type f \( -name "*.c" -o -name "Makefile" -o -name "Kb[27m[7mu[27m[7mild" \)[27m[A]0;spirit@Mariia: /mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[01;32mspirit@Mariia[00m:[01;34m/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[00m$ find . -type f \( -name "*.c" -o -name "Makefile" -o -name "Kbuild" \)
+[?2004l./Makefile
+[?2004h]0;spirit@Mariia: /mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[01;32mspirit@Mariia[00m:[01;34m/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2[00m$ [7mcd ~[27mcd ~
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mfind ~/repos -type f \( -name "hello.c" -o -name "hello-*.c" -o -name "hello*.ko" \) 2>/dev/null[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind ~/repos -type f \( -name "hello.c" -o -name "hello-*.c" -o -name "hello*.ko" \) 2>/dev/null
+[?2004l/home/spirit/repos/linux-stable/tools/perf/examples/bpf/hello.c
+[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mmkdir -p ~/repos/lab4[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir -p ~/repos/lab4
+[?2004l[?2004h]0;spirit@Mariia: ~[01;32mspirit@Mariia[00m:[01;34m~[00m$ [7mcd ~/repos/lab4[27mcd ~/repos/lab4
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mpwd[27mpwd
+[?2004l/home/spirit/repos/lab4
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano hello.c[27mnano hello.c
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 7.2                                             hello.c                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[K[1;68H(B[0;7m*[119G(B[m[2d(B[0;1m[36m#include[33m <linux/init.h>[3d[36m#include[33m <linux/module.h>[4d[36m#include[33m <linux/kernel.h>[6d[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[7d(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[8d(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module"[39m(B[m);[10d[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[11d{[12;9Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[13;9H[35mreturn[39m(B[m 0;[14d}[16d[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[17d{[18;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[19d}[21dmodule_init(hello_init);[22dmodule_exit(hello_exit);[?12l[?25h[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: hello.c                                                                                             [28;28H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 21 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[22;25H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano Makefile[27mnano Makefile
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 7.2                                            Makefile                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[K[1;68H(B[0;7m*[119G(B[m[2dobj-m += hello.o[4dKDIR ?= $(HOME)/repos/linux-stable[5dPWD := $(shell pwd)[7dall:[8;8H[38;5;208m[1K [39m(B[m$(MAKE) -C $(KDIR) M=$(PWD) modules[10dclean:[11;8H[38;5;208m[1K [39m(B[m$(MAKE) -C $(KDIR) M=$(PWD) clean[?12l[?25h[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: Makefile                                                                                            [28;29H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 10 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[11;42H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7m$KDIR/scripts/checkpatch.pl -f hello.c[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$KDIR/scripts/checkpatch.pl -f hello.c
+[?2004l[33mWARNING:[0m Missing or malformed SPDX-License-Identifier tag in line 1
+#1: FILE: hello.c:1:
++#include <linux/init.h>
+
+total: 0 errors, 1 warnings, 21 lines checked
+
+NOTE: For some of the reported defects, checkpatch may be able to
+      mechanically convert to the typical style using --fix or --fix-inplace.
+
+hello.c has style problems, please review.
+
+NOTE: If any of the errors are false positives, please report
+      them to the maintainer, see CHECKPATCH in MAINTAINERS.
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mmake[27mmake
+[?2004lmake -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab4 modules
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CC [M]  /home/spirit/repos/lab4/hello.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/spirit/repos/lab4/hello.mod.o
+  LD [M]  /home/spirit/repos/lab4/hello.ko
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mls -lh hello.ko[27mls -lh hello.ko
+[?2004l-rw-r--r-- 1 spirit spirit 3.7K Oct 27 17:03 hello.ko
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mfile hello.ko[27mfile hello.ko
+[?2004lhello.ko: ELF 32-bit LSB relocatable, ARM, EABI5 version 1 (SYSV), BuildID[sha1]=2550bd048c5c0f7c87920a58d16d9b9a1971e427, not stripped
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano hello.c[27mnano hello.c
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;52H(B[0;7m[ Read 21 lines ](B[m[H(B[0;7m  GNU nano 7.2                                             hello.c                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d(B[0;1m[36m#include[33m <linux/init.h>[3d[36m#include[33m <linux/module.h>[4d[36m#include[33m <linux/kernel.h>[6d[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[7d(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[8d(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module"[39m(B[m);[10d[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[11d{[12;9Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[13;9H[35mreturn[39m(B[m 0;[14d}[16d[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[17d{[18;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[19d}[21dmodule_init(hello_init);[22dmodule_exit(hello_exit);[2d[?12l[?25h[?25l[1;68H(B[0;7m*[119G(B[m7[2;27r8[2dM[1;30r[3;1H[?12l[?25h[?25l[?12l[?25h[A[?25l[28d[K[2d(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[39m(B[m[?12l[?25h[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: hello.c                                                                                             [28;28H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 22 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[2;36H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7m$KDIR/scripts/checkpatch.pl -f hello.c[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$KDIR/scripts/checkpatch.pl -f hello.c
+[?2004ltotal: 0 errors, 0 warnings, 22 lines checked
+
+hello.c has no obvious style problems and is ready for submission.
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano hello.c[27mnano hello.c
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;52H(B[0;7m[ Read 22 lines ](B[m[H(B[0;7m  GNU nano 7.2                                             hello.c                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[3d[36m#include[33m <linux/init.h>[4d[36m#include[33m <linux/module.h>[5d[36m#include[33m <linux/kernel.h>[7d[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[8d(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[9d(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module"[39m(B[m);[11d[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[12d{[13;9Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[14;9H[35mreturn[39m(B[m 0;[15d}[17d[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[18d{[19;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[20d}[22dmodule_init(hello_init);[23dmodule_exit(hello_exit);[2d[?12l[?25h[?25l[?12l[?25h[?25l[1;68H(B[0;7m*[119G(B[m[?12l[?25h[2d/ (B[0;1m[31mSPDX[39m(B[m-License-Identifier: (B[0;1m[31mGPL[39m(B[m-2.0[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[28d[K[?12l[?25h[2d[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[31mL[39m(B[m-2.0[K[?25l[?12l[?25h-2.0[K[?25l[?12l[?25h2.0[K[?25l[?12l[?25h.0[K[?25l[?12l[?25h0[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25hinclude <linux/init.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hit.h>[K[?25l[?12l[?25ht.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25hinclude <linux/module.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hle.h>[K[?25l[?12l[?25he.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25hinclude <linux/kernel.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hel.h>[K[?25l[?12l[?25hl.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[31mGPL[39m(B[m");[K[?25l[?12l[?25h(B[0;1m[31mPL[39m(B[m");[K[?25l[?12l[?25h(B[0;1m[31mL[39m(B[m");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hLozinska Mariia");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hia");[K[?25l[?12l[?25ha");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hHello World kernel module");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hle");[K[?25l[?12l[?25he");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25htatic[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnt[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[32mvoid[39m(B[m)[K[?25l[?12l[?25hoid)[K[?25l[?12l[?25hid)[K[?25l[?12l[?25hd)[K[?25l[?12l[?25h)[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hHello, world!\n");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h\n");[K[?25l[?12l[?25hn");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25heturn 0;[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hrn 0;[K[?25l[?12l[?25hn 0;[K[?25l[?12l[?25h 0;[K[?25l[?12l[?25h0;[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25htatic[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hoid[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[32mvoid[39m(B[m)[K[?25l[?12l[?25hoid)[K[?25l[?12l[?25hid)[K[?25l[?12l[?25hd)[K[?25l[?12l[?25h)[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hGoodbye, world!\n");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h\n");[K[?25l[?12l[?25hn");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnit);[K[?25l[?12l[?25hit);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hxit);[K[?25l[?12l[?25hit);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[3;9H(B[0;1m[33mfor[39m(B[m (i = 0; i < count; i++)[4;17Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[6;9H[35mreturn[39m(B[m 0;[7d}[9d[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[10d{[11;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[12d}[14dmodule_init(hello_init);[15dmodule_exit(hello_exit);[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A}[?25l[?12l[?25h[11;25H[?25l[?12l[?25h[A{[?25l[?12l[?25h[9;25H[?25l[?12l[?25h[A[?25l[?12l[?25h[A}[?25l[?12l[?25h[6;18H[?25l[?12l[?25h[A[?25l[?12l[?25h[4;25H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hpr_warn((B[0;1m[33m"Warning: count = %u\n"[39m(B[m, count);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H(B[0;1m[33mif[39m(B[m (count == 0 || (count >= 5 && count <= 10))[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H}[?25l[?12l[?25h7[2;28r8M[1;30r[2;17H[35mreturn[39m(B[m -(B[0;1m[31mEINVAL[39m(B[m;[25G[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hpr_err((B[0;1m[33m"Invalid count: %u\n"[39m(B[m, count);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H(B[0;1m[33mif[39m(B[m (count > 10) {[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H[32munsigned[39m(B[m [32mint[39m(B[m i;[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H{[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_PARM_DESC[39m(B[m(count, (B[0;1m[33m"Number of Hello World messages"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1Hmodule_param(count, uint, 0644);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[32mstatic[39m(B[m [32munsigned[39m(B[m [32mint[39m(B[m count = 1;[25G[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H(B[0;1m[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/errno.h>[39m(B[m[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/moduleparam.h>[25G[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/kernel.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/module.h>[39m(B[m[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/init.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[2;25H[39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: hello.c                                                                                             [28;28H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 41 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[2;25H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7m$KDIR/scripts/checkpatch.pl -f hello.c[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$KDIR/scripts/checkpatch.pl -f hello.c
+[?2004ltotal: 0 errors, 0 warnings, 41 lines checked
+
+hello.c has no obvious style problems and is ready for submission.
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mmake clean[27m
+[7mmake[27m[A]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ make clean
+make
+[?2004lmake -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab4 clean
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CLEAN   /home/spirit/repos/lab4/.tmp_versions
+  CLEAN   /home/spirit/repos/lab4/Module.symvers
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+make -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab4 modules
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CC [M]  /home/spirit/repos/lab4/hello.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/spirit/repos/lab4/hello.mod.o
+  LD [M]  /home/spirit/repos/lab4/hello.ko
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mmodinfo hello.ko[27mmodinfo hello.ko
+[?2004lfilename:       /home/spirit/repos/lab4/hello.ko
+description:    Hello World kernel module
+author:         Lozinska Mariia
+license:        GPL
+depends:        
+name:           hello
+vermagic:       4.19.325 SMP mod_unload ARMv7 p2v8 
+parm:           count:Number of Hello World messages (uint)
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano hello.c[27mnano hello.c
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;52H(B[0;7m[ Read 41 lines ](B[m[H(B[0;7m  GNU nano 7.2                                             hello.c                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[3d[36m#include[33m <linux/init.h>[4d[36m#include[33m <linux/module.h>[5d[36m#include[33m <linux/kernel.h>[6d[36m#include[33m <linux/moduleparam.h>[7d[36m#include[33m <linux/errno.h>[9d[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[10d(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[11d(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module"[39m(B[m);[13d[32mstatic[39m(B[m [32munsigned[39m(B[m [32mint[39m(B[m count = 1;[15dmodule_param(count, uint, 0644);[16d(B[0;1m[31mMODULE_PARM_DESC[39m(B[m(count, (B[0;1m[33m"Number of Hello World messages"[39m(B[m);[18d[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[19d{[20;9H[32munsigned[39m(B[m [32mint[39m(B[m i;[22;9H(B[0;1m[33mif[39m(B[m (count > 10) {[23;17Hpr_err((B[0;1m[33m"Invalid count: %u\n"[39m(B[m, count);[24;17H[35mreturn[39m(B[m -(B[0;1m[31mEINVAL[39m(B[m;[25;9H}[27d(B[0;1m[33mif[39m(B[m (count == 0 || (count >= 5 && count <= 10))[2d[?12l[?25h[?25l[1;68H(B[0;7m*[119G(B[m[?12l[?25h[2d/ (B[0;1m[31mSPDX[39m(B[m-License-Identifier: (B[0;1m[31mGPL[39m(B[m-2.0[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[28d[K[?12l[?25h[2d[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[31mL[39m(B[m-2.0[K[?25l[?12l[?25h-2.0[K[?25l[?12l[?25h2.0[K[?25l[?12l[?25h.0[K[?25l[?12l[?25h0[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;17Hpr_warn((B[0;1m[33m"Warning: count = %u\n"[39m(B[m, count);[2d[?12l[?25h[?25l[?12l[?25hinclude <linux/init.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hit.h>[K[?25l[?12l[?25ht.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25hinclude <linux/module.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hle.h>[K[?25l[?12l[?25he.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;9H(B[0;1m[33mfor[39m(B[m (i = 0; i < count; i++)[2d[?12l[?25h[?25l[?12l[?25hinclude <linux/kernel.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hel.h>[K[?25l[?12l[?25hl.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;17Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[2d[?12l[?25h[?25l[?12l[?25hinclude <linux/moduleparam.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25ham.h>[K[?25l[?12l[?25hm.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25hinclude <linux/errno.h>[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hno.h>[K[?25l[?12l[?25ho.h>[K[?25l[?12l[?25h.h>[K[?25l[?12l[?25hh>[K[?25l[?12l[?25h>[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;9H[35mreturn[39m(B[m 0;[2d[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[27;1H}[2d[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[31mGPL[39m(B[m");[K[?25l[?12l[?25h(B[0;1m[31mPL[39m(B[m");[K[?25l[?12l[?25h(B[0;1m[31mL[39m(B[m");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hLozinska Mariia");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hia");[K[?25l[?12l[?25ha");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;1H[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[2d[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hHello World kernel module");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hle");[K[?25l[?12l[?25he");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;1H{[2d[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[27;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[2d[?12l[?25h[?25l[?12l[?25htatic[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnsigned[1P[?25l[?12l[?25h[32msigned[39m(B[m[1P[?25l[?12l[?25higned[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnt[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h = 1;[K[?25l[?12l[?25h= 1;[K[?25l[?12l[?25h 1;[K[?25l[?12l[?25h1;[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;1H}[2d[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[32mint[39m(B[m[1P[?25l[?12l[?25hnt[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h644);[K[?25l[?12l[?25h44);[K[?25l[?12l[?25h4);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;1Hmodule_init(hello_init);[2d[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hNumber of Hello World messages");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hes");[K[?25l[?12l[?25hs");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[27;1Hmodule_exit(hello_exit);[2d[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25htatic[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnt[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[32mvoid[39m(B[m)[K[?25l[?12l[?25hoid)[K[?25l[?12l[?25hid)[K[?25l[?12l[?25hd)[K[?25l[?12l[?25h)[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25hnsigned[1P[?25l[?12l[?25h[32msigned[39m(B[m[1P[?25l[?12l[?25higned[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnt i;[K[?25l[?12l[?25ht i;[K[?25l[?12l[?25h i;[K[?25l[?12l[?25hi;[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25hf[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h10) {[K[?25l[?12l[?25h0) {[K[?25l[?12l[?25h) {[K[?25l[?12l[?25h {[K[?25l[?12l[?25h{[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hInvalid count: %u\n"[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hunt);[K[?25l[?12l[?25hnt);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[8P[?25l[?12l[?25heturn[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[31mNVAL[39m(B[m;[K[?25l[?12l[?25h(B[0;1m[31mVAL[39m(B[m;[K[?25l[?12l[?25h(B[0;1m[31mAL[39m(B[m;[K[?25l[?12l[?25h(B[0;1m[31mL[39m(B[m;[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h}[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25hf[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h 10))[K[?25l[?12l[?25h10))[K[?25l[?12l[?25h0))[K[?25l[?12l[?25h))[K[?25l[?12l[?25h) [?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hWarning: count = %u\n"[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hunt);[K[?25l[?12l[?25hnt);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25hor[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h i++)[K[?25l[?12l[?25hi++)[K[?25l[?12l[?25h++)[K[?25l[?12l[?25h+)[K[?25l[?12l[?25h)[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hHello, world!\n");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h\n");[K[?25l[?12l[?25hn");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25heturn 0;[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hrn 0;[K[?25l[?12l[?25hn 0;[K[?25l[?12l[?25h 0;[K[?25l[?12l[?25h0;[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25htatic[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hoid[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[32mvoid[39m(B[m)[K[?25l[?12l[?25hoid)[K[?25l[?12l[?25hid)[K[?25l[?12l[?25hd)[K[?25l[?12l[?25h)[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[8P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hGoodbye, world!\n");[K[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h\n");[K[?25l[?12l[?25hn");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hnit);[K[?25l[?12l[?25hit);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[2;28r[28;1H
+[1;30r[2;1H[?12l[?25h[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hxit);[K[?25l[?12l[?25hit);[K[?25l[?12l[?25ht);[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[K[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[2;17Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[3;9H}[5d[35mreturn[39m(B[m 0;[6d}[8d[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[9d{[10;9Hhello_free_events();[11;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[12d}[14dmodule_init(hello_init);[15dmodule_exit(hello_exit);[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A}[?25l[?12l[?25h[11;25H[?25l[?12l[?25h[A[?25l[?12l[?25h[A{[?25l[?12l[?25h[8;25H[?25l[?12l[?25h[A[?25l[?12l[?25h[A}[?25l[?12l[?25h[5;18H[?25l[?12l[?25h[A[?25l[?12l[?25h[3;10H[?25l[?12l[?25h[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hlist_add_tail(&event->list, &hello_list);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hevent->timestamp = ktime_get();[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;17H}[?25l[?12l[?25h7[2;28r8M[1;30r[2;25H[35mreturn[39m(B[m -(B[0;1m[31mENOMEM[39m(B[m;[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;25Hhello_free_events();[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;25Hpr_err((B[0;1m[33m"Memory allocation failed\n"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;17H(B[0;1m[33mif[39m(B[m (!event) {[25G[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hevent = kmalloc([32msizeof[39m(B[m(*event), (B[0;1m[31mGFP_KERNEL[39m(B[m);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H(B[0;1m[33mfor[39m(B[m (i = 0; i < count; i++) {[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;17Hpr_warn((B[0;1m[33m"Warning: count = %u\n"[39m(B[m, count);[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H(B[0;1m[33mif[39m(B[m (count == 0 || (count >= 5 && count <= 10))[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H}[?25l[?12l[?25h7[2;27r8M[1;30r[2;17H[35mreturn[39m(B[m -(B[0;1m[31mEINVAL[39m(B[m;[25G[?25l[?12l[?25h7[2;27r8M[1;30r[2;17Hpr_err((B[0;1m[33m"Invalid count: %u\n"[39m(B[m, count);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H(B[0;1m[33mif[39m(B[m (count > 10) {[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H[32munsigned[39m(B[m [32mint[39m(B[m i;[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H[32mstruct[39m(B[m hello_event *event;[2;25H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H{[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H}[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H}[?25l[?12l[?25h7[2;27r8M[1;30r[2;17Hkfree(event);[25G[?25l[?12l[?25h7[2;28r8M[1;30r[2;17Hlist_del(&event->list);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;25H([32mlong[39m(B[m [32mlong[39m(B[m)ktime_to_ns(event->timestamp));[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;17Hpr_info((B[0;1m[33m"Event time: %lld ns\n"[39m(B[m,[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;9Hlist_for_each_entry_safe(event, tmp, &hello_list, list) {[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H[32mstruct[39m(B[m hello_event *tmp;[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H[32mstruct[39m(B[m hello_event *event;[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H{[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[32mstatic[39m(B[m [32mvoid[39m(B[m hello_free_events([32mvoid[39m(B[m)[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[32mstatic[39m(B[m (B[0;1m[31mLIST_HEAD[39m(B[m(hello_list);[25G[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H};[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H[32mktime_t[39m(B[m timestamp;[?25l[?12l[?25h7[2;27r8M[1;30r[2;9H[32mstruct[39m(B[m list_head list;[25G[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[32mstruct[39m(B[m hello_event {[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_PARM_DESC[39m(B[m(count, (B[0;1m[33m"Number of Hello World messages"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1Hmodule_param(count, uint, 0444);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[32mstatic[39m(B[m [32munsigned[39m(B[m [32mint[39m(B[m count = 1;[25G[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module with timestamps"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[2;25H[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/slab.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/ktime.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/list.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/errno.h>[39m(B[m[?25l[?12l[?25h7[2;28r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/moduleparam.h>[25G[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/kernel.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/module.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[36m#include[33m <linux/init.h>[39m(B[m[?25l[?12l[?25h7[2;27r8M[1;30r[2;1H(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[2;25H[39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: hello.c                                                                                             [28;28H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 79 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[2;25H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7m$KDIR/scripts/checkpatch.pl -f hello.c[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$KDIR/scripts/checkpatch.pl -f hello.c
+[?2004l[33mWARNING:[0m Possible unnecessary 'out of memory' message
+#58: FILE: hello.c:58:
++		if (!event) {
++			pr_err("Memory allocation failed\n");
+
+total: 0 errors, 1 warnings, 79 lines checked
+
+NOTE: For some of the reported defects, checkpatch may be able to
+      mechanically convert to the typical style using --fix or --fix-inplace.
+
+hello.c has style problems, please review.
+
+NOTE: If any of the errors are false positives, please report
+      them to the maintainer, see CHECKPATCH in MAINTAINERS.
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mnano hello.c[27mnano hello.c
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;52H(B[0;7m[ Read 79 lines ](B[m[H(B[0;7m  GNU nano 7.2                                             hello.c                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d(B[0;1m[34m// SPDX-License-Identifier: GPL-2.0[3d[36m#include[33m <linux/init.h>[4d[36m#include[33m <linux/module.h>[5d[36m#include[33m <linux/kernel.h>[6d[36m#include[33m <linux/moduleparam.h>[7d[36m#include[33m <linux/errno.h>[8d[36m#include[33m <linux/list.h>[9d[36m#include[33m <linux/ktime.h>[10d[36m#include[33m <linux/slab.h>[12d[31mMODULE_LICENSE[39m(B[m((B[0;1m[33m"GPL"[39m(B[m);[13d(B[0;1m[31mMODULE_AUTHOR[39m(B[m((B[0;1m[33m"Lozinska Mariia"[39m(B[m);[14d(B[0;1m[31mMODULE_DESCRIPTION[39m(B[m((B[0;1m[33m"Hello World kernel module with timestamps"[39m(B[m);[16d[32mstatic[39m(B[m [32munsigned[39m(B[m [32mint[39m(B[m count = 1;[18dmodule_param(count, uint, 0444);[19d(B[0;1m[31mMODULE_PARM_DESC[39m(B[m(count, (B[0;1m[33m"Number of Hello World messages"[39m(B[m);[21d[32mstruct[39m(B[m hello_event {[22;9H[32mstruct[39m(B[m list_head list;[23;9H[32mktime_t[39m(B[m timestamp;[24d};[26d[32mstatic[39m(B[m (B[0;1m[31mLIST_HEAD[39m(B[m(hello_list);[2d[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[28d[K[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[32mstatic[39m(B[m [32mvoid[39m(B[m hello_free_events([32mvoid[39m(B[m)[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H{[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H[32mstruct[39m(B[m hello_event *event;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H[32mstruct[39m(B[m hello_event *tmp;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9Hlist_for_each_entry_safe(event, tmp, &hello_list, list) {[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hpr_info((B[0;1m[33m"Event time: %lld ns\n"[39m(B[m,[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;25H([32mlong[39m(B[m [32mlong[39m(B[m)ktime_to_ns(event->timestamp));[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hlist_del(&event->list);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hkfree(event);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[32mstatic[39m(B[m [32mint[39m(B[m __init hello_init([32mvoid[39m(B[m)[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H{[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H[32mstruct[39m(B[m hello_event *event;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H[32munsigned[39m(B[m [32mint[39m(B[m i;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H(B[0;1m[33mif[39m(B[m (count > 10) {[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hpr_err((B[0;1m[33m"Invalid count: %u\n"[39m(B[m, count);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17H[35mreturn[39m(B[m -(B[0;1m[31mEINVAL[39m(B[m;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H(B[0;1m[33mif[39m(B[m (count == 0 || (count >= 5 && count <= 10))[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hpr_warn((B[0;1m[33m"Warning: count = %u\n"[39m(B[m, count);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H(B[0;1m[33mfor[39m(B[m (i = 0; i < count; i++) {[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hevent = kmalloc([32msizeof[39m(B[m(*event), (B[0;1m[31mGFP_KERNEL[39m(B[m);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17H(B[0;1m[33mif[39m(B[m (!event) {[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;25Hpr_err((B[0;1m[33m"Memory allocation failed\n"[39m(B[m);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;25Hhello_free_events();[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;25H[35mreturn[39m(B[m -(B[0;1m[31mENOMEM[39m(B[m;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hevent->timestamp = ktime_get();[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hlist_add_tail(&event->list, &hello_list);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;17Hpr_info((B[0;1m[33m"Hello, world!\n"[39m(B[m);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9H[35mreturn[39m(B[m 0;[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[32mstatic[39m(B[m [32mvoid[39m(B[m __exit hello_exit([32mvoid[39m(B[m)[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H{[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9Hhello_free_events();[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;9Hpr_info((B[0;1m[33m"Goodbye, world!\n"[39m(B[m);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H}[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1Hmodule_init(hello_init);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1Hmodule_exit(hello_exit);[?25l[?12l[?25h7[2;28r8[28d
+[1;30r[27;1H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;28r8M[1;30r[2;9H(B[0;1m[33mfor[39m(B[m (i = 0; i < count; i++) {[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[7;9H[?25l[?12l[?25h[7;17H[?25l[?12l[?25h[7;25H[?25l[?12l[?25hh[?25l[?12l[?25he[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25h_[?25l[?12l[?25h[8d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[6;17H[?25l[?12l[?25h[6;25H[?25l[1;68H(B[0;7m*[119G(B[m[?12l[?25h[6;25H[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25hMemory allocation failed\n");[K[6;25H[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[6;25H[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[6;25H[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h\n");[K[25G[?25l[?12l[?25hn");[K[?25l[?12l[?25h");[K[?25l[?12l[?25h);[K[?25l[?12l[?25h;[K[?25l[?12l[?25h[42m[1K [49m(B[m [?25l[6;28r[28;1H
+[1;30r[6;48H[1K hello_free_events();[6;25H[?12l[?25h[?25l[?12l[?25h[8P[6;25H[?25l[?12l[?25h[8P[6;25H[?25l[?12l[?25h[8P[6;25H[?25l[29;16H[15X[29;31H(B[0;7mM-D(B[m DOS Format       [29;61H(B[0;7mM-A(B[m Append[16X[29;93H(B[0;7mB(B[m Backup File[K[30;2H(B[0;7mC(B[m Cancel[16G[15X[30;31H(B[0;7mM-M(B[m Mac Format         [61G(B[0;7mM-P(B[m Prepend[19X[30;91H(B[0;7m^T(B[m Browse[K[28d(B[0;7mFile Name to Write: hello.c                                                                                             [28;28H(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;68H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 78 lines ](B[m[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location[93G(B[0;7mU(B[m Undo       (B[0;7mM-A(B[m Set Mark[30;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo [106G(B[0;7mM-6(B[m Copy[?12l[?25h[6;25H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7m$KDIR/scripts/checkpatch.pl -f hello.c[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$KDIR/scripts/checkpatch.pl -f hello.c
+[?2004ltotal: 0 errors, 0 warnings, 78 lines checked
+
+hello.c has no obvious style problems and is ready for submission.
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mmake clean[27m
+[7mmake[27m[A]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ make clean
+make
+[?2004lmake -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab4 clean
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CLEAN   /home/spirit/repos/lab4/.tmp_versions
+  CLEAN   /home/spirit/repos/lab4/Module.symvers
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+make -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab4 modules
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CC [M]  /home/spirit/repos/lab4/hello.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/spirit/repos/lab4/hello.mod.o
+  LD [M]  /home/spirit/repos/lab4/hello.ko
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mmodinfo hello.ko[27mmodinfo hello.ko
+[?2004lfilename:       /home/spirit/repos/lab4/hello.ko
+description:    Hello World kernel module with timestamps
+author:         Lozinska Mariia
+license:        GPL
+depends:        
+name:           hello
+vermagic:       4.19.325 SMP mod_unload ARMv7 p2v8 
+parm:           count:Number of Hello World messages (uint)
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mls -lh ~/repos/linux-stable/arch/arm/boot/zImage[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lh ~/repos/linux-stable/arch/arm/boot/zImage
+[?2004l-rwxr-xr-x 1 spirit spirit 8.6M Oct 14 16:58 [0m[01;32m/home/spirit/repos/linux-stable/arch/arm/boot/zImage[0m
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mfind ~ -type f \( -name "*.ext4" -o -name "*.img" -o -name "rootfs*" -o -name "uImage" \) 2>[27m[7m/[27m[7mdev/null[27m[A]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ find ~ -type f \( -name "*.ext4" -o -name "*.img" -o -name "rootfs*" -o -name "uImage" \) 2>/dev/null
+[?2004l/home/spirit/repos/u-boot/u-boot.img
+/home/spirit/repos/u-boot/u-boot-dtb.img
+/home/spirit/repos/u-boot/doc/README.ext4
+/home/spirit/repos/busybox/rootfs.img
+/home/spirit/repos/busybox/include/config/feature/skip/rootfs.h
+/home/spirit/repos/busybox/rootfs.ext4
+/home/spirit/repos/busybox/rootfs.cpio.gz
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mwhich qemu-system-arm[27mwhich qemu-system-arm
+[?2004l/usr/bin/qemu-system-arm
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mcd ~/repos/lab4[27mcd ~/repos/lab4
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msudo mkdir -p /mnt/rootfs_lab4[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo mkdir -p /mnt/rootfs_lab4
+[?2004l[sudo] password for spirit: 
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msudo mount -o loop ~/repos/busybox/rootfs.ext4 /mnt/rootfs_lab4[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo mount -o loop ~/repos/busybox/rootfs.ext4 /mnt/rootfs_lab4
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mls -la /mnt/rootfs_lab4[27mls -la /mnt/rootfs_lab4
+[?2004ltotal 68
+drwxr-xr-x 14 root   root    4096 Oct 14 19:45 [0m[01;34m.[0m
+drwxr-xr-x  6 root   root    4096 Oct 27 17:10 [01;34m..[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34mbin[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:10 [01;34mboot[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34mdev[0m
+drwxr-xr-x  3 spirit spirit  4096 Oct 14 17:14 [01;34metc[0m
+lrwxrwxrwx  1 spirit spirit    11 Oct 14 17:08 [01;36minit[0m -> [01;32mbin/busybox[0m
+drwxr-xr-x  3 spirit spirit  4096 Oct 14 17:13 [01;34mlib[0m
+lrwxrwxrwx  1 spirit spirit    11 Oct 14 17:05 [01;36mlinuxrc[0m -> [01;32mbin/busybox[0m
+drwx------  2 root   root   16384 Oct 14 19:45 [01;34mlost+found[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34mproc[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34mroot[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34msbin[0m
+drwxr-xr-x  3 spirit spirit  4096 Oct 14 17:05 [01;34msys[0m
+drwxr-xr-x  2 spirit spirit  4096 Oct 14 17:05 [01;34mtmp[0m
+drwxr-xr-x  4 spirit spirit  4096 Oct 14 17:05 [01;34musr[0m
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msudo mkdir -p /mnt/rootfs_lab4/root/lab4[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo mkdir -p /mnt/rootfs_lab4/root/lab4
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msudo cp ~/repos/lab4/hello.ko /mnt/rootfs_lab4/root/lab4/[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo cp ~/repos/lab4/hello.ko /mnt/rootfs_lab4/root/lab4/
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mls -lh /mnt/rootfs_lab4/root/lab4/[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lh /mnt/rootfs_lab4/root/lab4/
+[?2004ltotal 8.0K
+-rw-r--r-- 1 root root 5.4K Oct 27 17:10 hello.ko
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msync[27msync
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msudo umount /mnt/rootfs_lab4[27msudo umount /mnt/rootfs_lab4
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mgrep -n -A 8 -B 3 'qemu-system-arm' "/mnt/c/KPI/3 year/5_semestr/АК2/history_lab3.txt"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -n -A 8 -B 3 'qemu-system-arm' "/mnt/c/KPI/3 year/5_semestr/АК2/history_lab3.txt"
+[?2004l[32m[K121[m[K[36m[K-[m[K  949  2026-10-14 17:17:41 echo '$MODALIAS=.* root:root 660 @modprobe "$MODALIAS"' > _install/etc/mdev.conf
+[32m[K122[m[K[36m[K-[m[K  950  2026-10-14 17:17:58 echo "nameserver 8.8.8.8" > _install/etc/resolv.conf
+[32m[K123[m[K[36m[K-[m[K  951  2026-10-14 17:18:03 ls -l _install/etc/
+[32m[K124[m[K[36m[K:[m[K  952  2026-10-14 17:19:10 sudo apt install [01;31m[Kqemu-system-arm[m[K
+[32m[K125[m[K[36m[K-[m[K  953  2026-10-14 17:19:50 cd ~/repos/busybox
+[32m[K126[m[K[36m[K-[m[K  954  2026-10-14 17:19:55 cd _install
+[32m[K127[m[K[36m[K-[m[K  955  2026-10-14 17:20:03 find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
+[32m[K128[m[K[36m[K-[m[K  956  2026-10-14 17:20:10 cd ..
+[32m[K129[m[K[36m[K:[m[K  957  2026-10-14 17:21:33 [01;31m[Kqemu-system-arm[m[K -kernel _install/boot/zImage -initrd rootfs.cpio.gz -machine virt -nographic -m 512 --append "root=/dev/ram0 rw console=ttyAMA0,115200 mem=512M"
+[32m[K130[m[K[36m[K-[m[K  958  2026-10-14 19:13:47 sudo apt install util-linux dosfstools e2fsprogs
+[32m[K131[m[K[36m[K-[m[K  959  2026-10-14 19:14:03 sudo fdisk -l
+[32m[K132[m[K[36m[K-[m[K  960  2026-10-14 19:14:17 sudo dmesg
+[32m[K133[m[K[36m[K-[m[K  961  2026-10-14 19:16:51 sudo apt install android-tools-fsutils
+[32m[K134[m[K[36m[K-[m[K  962  2026-10-14 19:17:06 ext2simg rootfs.ext4 rootfs.img
+[32m[K135[m[K[36m[K-[m[K  963  2026-10-14 19:17:51 sudo apt update
+[32m[K136[m[K[36m[K-[m[K  964  2026-10-14 19:18:22 sudo apt install e2fsprogs
+[32m[K137[m[K[36m[K-[m[K  965  2026-10-14 19:18:39 ext2simg rootfs.ext4 rootfs.img
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mgrep -E '^(CONFIG_EXT4_FS|CONFIG_VIRTIO_BLK|CONFIG_VIRTIO_MMIO|CONFIG_DEVTMPFS)=' "$KDIR/.co[27m[7mn[27m[7mfig"[27m[A]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ grep -E '^(CONFIG_EXT4_FS|CONFIG_VIRTIO_BLK|CONFIG_VIRTIO_MMIO|CONFIG_DEVTMPFS)=' "$KDIR/.config"
+[?2004l[01;31m[KCONFIG_DEVTMPFS=[m[Ky
+[01;31m[KCONFIG_VIRTIO_BLK=[m[Ky
+[01;31m[KCONFIG_VIRTIO_MMIO=[m[Ky
+[01;31m[KCONFIG_EXT4_FS=[m[Ky
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mls -lh ~/repos/busybox/_install/boot/zImage[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -lh ~/repos/busybox/_install/boot/zImage
+[?2004l-rwxr-xr-x 1 spirit spirit 8.6M Oct 14 17:10 [0m[01;32m/home/spirit/repos/busybox/_install/boot/zImage[0m
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7msha256sum ~/repos/busybox/_install/boot/zImage "$KDIR/arch/arm/boot/zImage"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csha256sum ~/repos/busybox/_install/boot/zImage "$KDIR/arch/arm/boot/zImage"
+[?2004l05ad13bb9dfa59b52b59b6ac326e99c923be107323d0864720e34e7e5466ee4d  /home/spirit/repos/busybox/_install/boot/zImage
+05ad13bb9dfa59b52b59b6ac326e99c923be107323d0864720e34e7e5466ee4d  /home/spirit/repos/linux-stable/arch/arm/boot/zImage
+[?2004h]0;spirit@Mariia: ~/repos/lab4[01;32mspirit@Mariia[00m:[01;34m~/repos/lab4[00m$ [7mcd ~/repos/busybox[27mcd ~/repos/busybox
+[?2004l[?2004h]0;spirit@Mariia: ~/repos/busybox[01;32mspirit@Mariia[00m:[01;34m~/repos/busybox[00m$ [7mqemu-system-arm \[27m
+[7m  -M virt \[27m
+[7m  -cpu cortex-a15 \[27m
+[7m  -m 512M \[27m
+[7m  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \[27m
+[7m  -drive file=~/repos/busybox/rootfs.ext4,format=raw,if=none,id=hd0 \[27m
+[7m  -device virtio-blk-device,drive=hd0 \[27m
+[7m  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \[27m
+[7m  -nographic[27m[A[A[A[A[A[A[A[A]0;spirit@Mariia: ~/repos/busybox[01;32mspirit@Mariia[00m:[01;34m~/repos/busybox[00m$ qemu-system-arm \
+  -M virt \
+  -cpu cortex-a15 \
+  -m 512M \
+  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \
+  -drive file=~/repos/busybox/rootfs.ext4,format=raw,if=none,id=hd0 \
+  -device virtio-blk-device,drive=hd0 \
+  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \
+  -nographic
+[?2004l[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.19.325 (spirit@Mariia) (gcc version 8.3.0 (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36))) #1 SMP Wed Oct 14 16:48:26 UTC 2026
+[    0.000000] CPU: ARMv7 Processor [414fc0f0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] OF: fdt: Machine model: linux,dummy-virt
+[    0.000000] random: crng init done
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 64 MiB at 0x5c000000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] percpu: Embedded 16 pages/cpu s36748 r8192 d20596 u65536
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 130048
+[    0.000000] Kernel command line: root=/dev/vda rw rootwait console=ttyAMA0,115200
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 430496K/524288K available (12288K kernel code, 1618K rwdata, 4796K rodata, 2048K init, 394K bss, 28256K reserved, 65536K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xff800000   ( 496 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0x(ptrval) - 0x(ptrval)   (13280 kB)
+[    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (2048 kB)
+[    0.000000]       .data : 0x(ptrval) - 0x(ptrval)   (1619 kB)
+[    0.000000]        .bss : 0x(ptrval) - 0x(ptrval)   ( 395 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=16 to nr_cpu_ids=1.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] GICv2m: range[mem 0x08020000-0x08020fff], SPI[80:143]
+[    0.000000] arch_timer: cp15 timer(s) running at 62.50MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x1cd42e208c, max_idle_ns: 881590405314 ns
+[    0.000273] sched_clock: 56 bits at 62MHz, resolution 16ns, wraps every 4398046511096ns
+[    0.000487] Switching to timer-based delay loop, resolution 16ns
+[    0.007251] Console: colour dummy device 80x30
+[    0.014556] Calibrating delay loop (skipped), value calculated using timer frequency.. 125.00 BogoMIPS (lpj=625000)
+[    0.014762] CPU: Testing write buffer coherency: ok
+[    0.016389] CPU0: Spectre v2: firmware did not set auxiliary control register IBE bit, system vulnerable
+[    0.016601] CPU0: Spectre BHB: enabling loop workaround for all CPUs
+[    0.016729] pid_max: default: 32768 minimum: 301
+[    0.018535] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.018589] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.046778] /cpus/cpu@0 missing clock-frequency property
+[    0.047144] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.053738] Setting up static identity map for 0x40300000 - 0x403000a0
+[    0.056190] rcu: Hierarchical SRCU implementation.
+[    0.060028] EFI services will not be available.
+[    0.061012] smp: Bringing up secondary CPUs ...
+[    0.061106] smp: Brought up 1 node, 1 CPU
+[    0.061192] SMP: Total of 1 processors activated (125.00 BogoMIPS).
+[    0.061261] CPU: All CPU(s) started in SVC mode.
+[    0.121303] devtmpfs: initialized
+[    0.135193] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    0.165994] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.167088] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.174460] pinctrl core: initialized pinctrl subsystem
+[    0.194622] DMI not present or invalid.
+[    0.203441] NET: Registered protocol family 16
+[    0.231962] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.241022] cpuidle: using governor menu
+[    0.242085] No ATAGs?
+[    0.245262] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.245381] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.254261] Serial: AMBA PL011 UART driver
+[    0.297107] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 54, base_baud = 0) is a PL011 rev1
+[    0.329045] console [ttyAMA0] enabled
+[    0.402847] vgaarb: loaded
+[    0.408289] SCSI subsystem initialized
+[    0.411961] usbcore: registered new interface driver usbfs
+[    0.412398] usbcore: registered new interface driver hub
+[    0.413290] usbcore: registered new device driver usb
+[    0.418290] pps_core: LinuxPPS API ver. 1 registered
+[    0.418494] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.418938] PTP clock support registered
+[    0.419414] EDAC MC: Ver: 3.0.0
+[    0.447114] clocksource: Switched to clocksource arch_sys_counter
+[    0.597403] NET: Registered protocol family 2
+[    0.599173] IP idents hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.604101] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes)
+[    0.604467] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.604903] TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.605259] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.607249] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.610088] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.611776] NET: Registered protocol family 1
+[    0.615803] RPC: Registered named UNIX socket transport module.
+[    0.616013] RPC: Registered udp transport module.
+[    0.616566] RPC: Registered tcp transport module.
+[    0.617417] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.628706] Initialise system trusted keyrings
+[    0.630524] workingset: timestamp_bits=30 max_order=17 bucket_order=0
+[    0.641209] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.644214] NFS: Registering the id_resolver key type
+[    0.644881] Key type id_resolver registered
+[    0.645398] Key type id_legacy registered
+[    0.646113] ntfs: driver 2.1.32 [Flags: R/O].
+[    0.657422] Key type asymmetric registered
+[    0.657654] Asymmetric key parser 'x509' registered
+[    0.658112] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.658501] io scheduler noop registered
+[    0.658656] io scheduler deadline registered
+[    0.659044] io scheduler cfq registered (default)
+[    0.659198] io scheduler mq-deadline registered
+[    0.659335] io scheduler kyber registered
+[    0.676387] pl061_gpio 9030000.pl061: PL061 GPIO chip @0x09030000 registered
+[    0.682107] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.683830] pci-host-generic 4010000000.pcie:    IO 0x3eff0000..0x3effffff -> 0x00000000
+[    0.684623] pci-host-generic 4010000000.pcie:   MEM 0x10000000..0x3efeffff -> 0x10000000
+[    0.684989] pci-host-generic 4010000000.pcie:   MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.687619] pci-host-generic 4010000000.pcie: can't claim ECAM area [mem 0x10000000-0x1fffffff]: address conflict with pcie@10000000 [mem 0x10000000-0x3efeffff]
+[    0.689964] pci-host-generic: probe of 4010000000.pcie failed with error -16
+[    0.771740] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.776792] SuperH (H)SCI(F) driver initialized
+[    0.778457] msm_serial: driver initialized
+[    0.778893] STMicroelectronics ASC driver initialized
+[    0.781093] STM32 USART driver initialized
+[    0.828970] brd: module loaded
+[    0.847724] loop: module loaded
+[    0.867688] virtio_blk virtio0: [vda] 292969 512-byte logical blocks (150 MB/143 MiB)
+[    0.903451] CAN device driver interface
+[    0.904666] bgmac_bcma: Broadcom 47xx GBit MAC driver loaded
+[    0.906056] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    0.906305] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.906689] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    0.907300] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.912089] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    0.912377] usbcore: registered new interface driver pegasus
+[    0.912765] usbcore: registered new interface driver asix
+[    0.913490] usbcore: registered new interface driver ax88179_178a
+[    0.913789] usbcore: registered new interface driver cdc_ether
+[    0.914253] usbcore: registered new interface driver smsc75xx
+[    0.914795] usbcore: registered new interface driver smsc95xx
+[    0.915110] usbcore: registered new interface driver net1080
+[    0.915325] usbcore: registered new interface driver cdc_subset
+[    0.915767] usbcore: registered new interface driver zaurus
+[    0.916087] usbcore: registered new interface driver cdc_ncm
+[    0.920399] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.920633] ehci-pci: EHCI PCI platform driver
+[    0.920948] ehci-platform: EHCI generic platform driver
+[    0.922728] ehci-omap: OMAP-EHCI Host Controller driver
+[    0.924059] ehci-orion: EHCI orion driver
+[    0.924499] SPEAr-ehci: EHCI SPEAr driver
+[    0.924841] ehci-st: EHCI STMicroelectronics driver
+[    0.925415] ehci-exynos: EHCI EXYNOS driver
+[    0.925720] ehci-atmel: EHCI Atmel driver
+[    0.925937] tegra-ehci: Tegra EHCI driver
+[    0.926183] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.926462] ohci-pci: OHCI PCI platform driver
+[    0.926840] ohci-platform: OHCI generic platform driver
+[    0.927144] SPEAr-ohci: OHCI SPEAr driver
+[    0.927360] ohci-st: OHCI STMicroelectronics driver
+[    0.927594] ohci-atmel: OHCI Atmel driver
+[    0.928596] usbcore: registered new interface driver usb-storage
+[    0.929195] usbcore: registered new interface driver usbserial_generic
+[    0.929977] usbserial: USB Serial support registered for generic
+[    0.930348] usbcore: registered new interface driver ftdi_sio
+[    0.930690] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    0.931118] usbcore: registered new interface driver pl2303
+[    0.931350] usbserial: USB Serial support registered for pl2303
+[    0.931629] usbcore: registered new interface driver usb_serial_simple
+[    0.933238] usbserial: USB Serial support registered for carelink
+[    0.933762] usbserial: USB Serial support registered for flashloader
+[    0.934210] usbserial: USB Serial support registered for funsoft
+[    0.934862] usbserial: USB Serial support registered for google
+[    0.935429] usbserial: USB Serial support registered for hp4x
+[    0.935563] usbserial: USB Serial support registered for kaufmann
+[    0.936273] usbserial: USB Serial support registered for libtransistor
+[    0.936920] usbserial: USB Serial support registered for moto_modem
+[    0.937496] usbserial: USB Serial support registered for motorola_tetra
+[    0.938401] usbserial: USB Serial support registered for nokia
+[    0.939172] usbserial: USB Serial support registered for novatel_gps
+[    0.939550] usbserial: USB Serial support registered for siemens_mpi
+[    0.939731] usbserial: USB Serial support registered for suunto
+[    0.939873] usbserial: USB Serial support registered for vivopay
+[    0.940019] usbserial: USB Serial support registered for zio
+[    0.952773] rtc-pl031 9010000.pl031: rtc core: registered pl031 as rtc0
+[    0.955207] i2c /dev entries driver
+[    0.967325] sdhci: Secure Digital Host Controller Interface driver
+[    0.967552] sdhci: Copyright(c) Pierre Ossman
+[    0.969408] Synopsys Designware Multimedia Card Interface Driver
+[    0.971065] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.975060] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.976834] usbcore: registered new interface driver usbhid
+[    0.977038] usbhid: USB HID core driver
+[    0.983455] NET: Registered protocol family 10
+[    0.994320] Segment Routing with IPv6
+[    0.995406] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.000559] NET: Registered protocol family 17
+[    1.002248] can: controller area network core (rev 20170425 abi 9)
+[    1.003114] NET: Registered protocol family 29
+[    1.004596] can: raw protocol (rev 20170425)
+[    1.005151] can: broadcast manager protocol (rev 20170425 t)
+[    1.005843] can: netlink gateway (rev 20170425) max_hops=1
+[    1.007552] Key type dns_resolver registered
+[    1.008114] ThumbEE CPU extension supported.
+[    1.008315] Registering SWP/SWPB emulation handler
+[    1.011701] Loading compiled-in X.509 certificates
+[    1.029227] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.036506] rtc-pl031 9010000.pl031: setting system clock to 2026-10-27 17:12:45 UTC (1793121165)
+[    1.046384] uart-pl011 9000000.pl011: no DMA platform data
+[    1.148710] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    1.151025] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    1.158678] devtmpfs: mounted
+[    1.307087] Freeing unused kernel memory: 2048K
+[    1.314960] Run /sbin/init as init process
+
+Please press Enter to activate this console. 
+/ # uname -r
+4.19.325
+/ # ls -lh /root/lab4/
+total 8K     
+-rw-r--r--    1 root     root        5.4K Oct 27 17:10 [0;0mhello.ko[m
+/ # which insmod
+/sbin/insmod
+/ # insmod /root/lab4/hello.ko
+[  355.481983] hello: loading out-of-tree module taints kernel.
+[  355.498631] Hello, world!
+/ # lsmod
+hello 16384 0 - Live 0xbf000000 (O)
+/ # cat /sys/module/hello/parameters/count
+1
+/ # mount -t sysfs sysfs /sys
+mount: mounting sysfs on /sys failed: Device or resource busy
+/ # rmmod hello
+[  381.812513] Event time: 355455996320 ns
+[  381.813162] Goodbye, world!
+/ # dmesg | tail -15
+[    1.008114] ThumbEE CPU extension supported.
+[    1.008315] Registering SWP/SWPB emulation handler
+[    1.011701] Loading compiled-in X.509 certificates
+[    1.029227] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.036506] rtc-pl031 9010000.pl031: setting system clock to 2026-10-27 17:12:45 UTC (1793121165)
+[    1.046384] uart-pl011 9000000.pl011: no DMA platform data
+[    1.148710] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    1.151025] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    1.158678] devtmpfs: mounted
+[    1.307087] Freeing unused kernel memory: 2048K
+[    1.314960] Run /sbin/init as init process
+[  355.481983] hello: loading out-of-tree module taints kernel.
+[  355.498631] Hello, world!
+[  381.812513] Event time: 355455996320 ns
+[  381.813162] Goodbye, world!
+/ # insmod /root/lab4/hello.ko count=0
+[  429.778898] Warning: count = 0
+/ # cat /sys/module/hello/parameters/count
+0
+/ # rmmod hello
+[  438.547503] Goodbye, world!
+/ # insmod /root/lab4/hello.ko count=3
+[  445.541639] Hello, world!
+[  445.541919] Hello, world!
+[  445.542097] Hello, world!
+/ # cat /sys/module/hello/parameters/count
+3
+/ # rmmod hello
+[  457.695837] Event time: 445498979232 ns
+[  457.696277] Event time: 445499331888 ns
+[  457.696456] Event time: 445499508752 ns
+[  457.696541] Goodbye, world!
+/ # insmod /root/lab4/hello.ko count=7
+[  468.069632] Warning: count = 7
+[  468.069939] Hello, world!
+[  468.070024] Hello, world!
+[  468.070108] Hello, world!
+[  468.070173] Hello, world!
+[  468.070392] Hello, world!
+[  468.070477] Hello, world!
+[  468.070539] Hello, world!
+/ # cat /sys/module/hello/parameters/count
+7
+/ # rmmod hello
+[  474.760943] Event time: 468027334768 ns
+[  474.761175] Event time: 468027439664 ns
+[  474.761437] Event time: 468027523264 ns
+[  474.761527] Event time: 468027588960 ns
+[  474.761631] Event time: 468027804352 ns
+[  474.761732] Event time: 468027892544 ns
+[  474.761817] Event time: 468027955264 ns
+[  474.761943] Goodbye, world!
+/ # insmod /root/lab4/hello.ko count=11
+[  479.961911] Invalid count: 11
+insmod: can't insert '/root/lab4/hello.ko': invalid parameter
+/ # lsmod
+/ # dmesg | tail -80
+[    0.930348] usbcore: registered new interface driver ftdi_sio
+[    0.930690] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    0.931118] usbcore: registered new interface driver pl2303
+[    0.931350] usbserial: USB Serial support registered for pl2303
+[    0.931629] usbcore: registered new interface driver usb_serial_simple
+[    0.933238] usbserial: USB Serial support registered for carelink
+[    0.933762] usbserial: USB Serial support registered for flashloader
+[    0.934210] usbserial: USB Serial support registered for funsoft
+[    0.934862] usbserial: USB Serial support registered for google
+[    0.935429] usbserial: USB Serial support registered for hp4x
+[    0.935563] usbserial: USB Serial support registered for kaufmann
+[    0.936273] usbserial: USB Serial support registered for libtransistor
+[    0.936920] usbserial: USB Serial support registered for moto_modem
+[    0.937496] usbserial: USB Serial support registered for motorola_tetra
+[    0.938401] usbserial: USB Serial support registered for nokia
+[    0.939172] usbserial: USB Serial support registered for novatel_gps
+[    0.939550] usbserial: USB Serial support registered for siemens_mpi
+[    0.939731] usbserial: USB Serial support registered for suunto
+[    0.939873] usbserial: USB Serial support registered for vivopay
+[    0.940019] usbserial: USB Serial support registered for zio
+[    0.952773] rtc-pl031 9010000.pl031: rtc core: registered pl031 as rtc0
+[    0.955207] i2c /dev entries driver
+[    0.967325] sdhci: Secure Digital Host Controller Interface driver
+[    0.967552] sdhci: Copyright(c) Pierre Ossman
+[    0.969408] Synopsys Designware Multimedia Card Interface Driver
+[    0.971065] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.975060] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.976834] usbcore: registered new interface driver usbhid
+[    0.977038] usbhid: USB HID core driver
+[    0.983455] NET: Registered protocol family 10
+[    0.994320] Segment Routing with IPv6
+[    0.995406] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.000559] NET: Registered protocol family 17
+[    1.002248] can: controller area network core (rev 20170425 abi 9)
+[    1.003114] NET: Registered protocol family 29
+[    1.004596] can: raw protocol (rev 20170425)
+[    1.005151] can: broadcast manager protocol (rev 20170425 t)
+[    1.005843] can: netlink gateway (rev 20170425) max_hops=1
+[    1.007552] Key type dns_resolver registered
+[    1.008114] ThumbEE CPU extension supported.
+[    1.008315] Registering SWP/SWPB emulation handler
+[    1.011701] Loading compiled-in X.509 certificates
+[    1.029227] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.036506] rtc-pl031 9010000.pl031: setting system clock to 2026-10-27 17:12:45 UTC (1793121165)
+[    1.046384] uart-pl011 9000000.pl011: no DMA platform data
+[    1.148710] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    1.151025] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    1.158678] devtmpfs: mounted
+[    1.307087] Freeing unused kernel memory: 2048K
+[    1.314960] Run /sbin/init as init process
+[  355.481983] hello: loading out-of-tree module taints kernel.
+[  355.498631] Hello, world!
+[  381.812513] Event time: 355455996320 ns
+[  381.813162] Goodbye, world!
+[  429.778898] Warning: count = 0
+[  438.547503] Goodbye, world!
+[  445.541639] Hello, world!
+[  445.541919] Hello, world!
+[  445.542097] Hello, world!
+[  457.695837] Event time: 445498979232 ns
+[  457.696277] Event time: 445499331888 ns
+[  457.696456] Event time: 445499508752 ns
+[  457.696541] Goodbye, world!
+[  468.069632] Warning: count = 7
+[  468.069939] Hello, world!
+[  468.070024] Hello, world!
+[  468.070108] Hello, world!
+[  468.070173] Hello, world!
+[  468.070392] Hello, world!
+[  468.070477] Hello, world!
+[  468.070539] Hello, world!
+[  474.760943] Event time: 468027334768 ns
+[  474.761175] Event time: 468027439664 ns
+[  474.761437] Event time: 468027523264 ns
+[  474.761527] Event time: 468027588960 ns
+[  474.761631] Event time: 468027804352 ns
+[  474.761732] Event time: 468027892544 ns
+[  474.761817] Event time: 468027955264 ns
+[  474.761943] Goodbye, world!
+[  479.961911] Invalid count: 11
+/ # poweroff
+/ # umount: devtmpfs busy - remounted read-only
+[  561.288646] EXT4-fs (vda): re-mounted. Opts: (null)
+swapoff: can't open '/etc/fstab': No such file or directory
+The system is going down NOW!
+Sent SIGTERM to all processes
+Sent SIGKILL to all processes
+Requesting system poweroff
+[  563.353975] reboot: Power down
+[?2004h]0;spirit@Mariia: ~/repos/busybox[01;32mspirit@Mariia[00m:[01;34m~/repos/busybox[00m$ [7mexit[27mexit
+[?2004lexit
