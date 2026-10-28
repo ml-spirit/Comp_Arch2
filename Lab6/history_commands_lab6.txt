@@ -1,0 +1,1022 @@
+Script started on 2026-10-28 19:08:06+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+spirit@Mariia:~$ mkdir -p ~/repos/lab6
+cd ~/repos/lab6spirit@Mariia:~$ mkdir -p ~/repos/lab6
+cd ~/repos/lab6
+spirit@Mariia:~/repos/lab6$ cp ~/repos/lab4/hello.c .
+cp ~/repos/lab4/Makefile .spirit@Mariia:~/repos/lab6$ cp ~/repos/lab4/hello.c .
+cp ~/repos/lab4/Makefile .
+spirit@Mariia:~/repos/lab6$ ls -lals -la
+total 16
+drwxr-xr-x 2 spirit spirit 4096 Oct 28 19:08 .
+drwxr-xr-x 8 spirit spirit 4096 Oct 28 19:08 ..
+-rw-r--r-- 1 spirit spirit  159 Oct 28 19:08 Makefile
+-rw-r--r-- 1 spirit spirit 1542 Oct 28 19:08 hello.c
+spirit@Mariia:~/repos/lab6$ export ARCH=arm
+export CROSS_COMPILE=arm-linux-gnueabihf-
+export KDIR=$HOME/repos/linux-stableexport ARCH=arm
+export CROSS_COMPILE=arm-linux-gnueabihf-
+export KDIR=$HOME/repos/linux-stable
+spirit@Mariia:~/repos/lab6$ echo $ARCH
+echo $CROSS_COMPILE
+echo $KDIRspirit@Mariia:~/repos/lab6$ echo $ARCH
+echo $CROSS_COMPILE
+echo $KDIR
+arm
+arm-linux-gnueabihf-
+/home/spirit/repos/linux-stable
+spirit@Mariia:~/repos/lab6$ cat -n ~/repos/lab6/hello.ccat -n ~/repos/lab6/hello.c
+     1	// SPDX-License-Identifier: GPL-2.0
+     2	#include <linux/init.h>
+     3	#include <linux/module.h>
+     4	#include <linux/kernel.h>
+     5	#include <linux/moduleparam.h>
+     6	#include <linux/errno.h>
+     7	#include <linux/list.h>
+     8	#include <linux/ktime.h>
+     9	#include <linux/slab.h>
+    10	
+    11	MODULE_LICENSE("GPL");
+    12	MODULE_AUTHOR("Lozinska Mariia");
+    13	MODULE_DESCRIPTION("Hello World kernel module with timestamps");
+    14	
+    15	static unsigned int count = 1;
+    16	
+    17	module_param(count, uint, 0444);
+    18	MODULE_PARM_DESC(count, "Number of Hello World messages");
+    19	
+    20	struct hello_event {
+    21		struct list_head list;
+    22		ktime_t timestamp;
+    23	};
+    24	
+    25	static LIST_HEAD(hello_list);
+    26	
+    27	static void hello_free_events(void)
+    28	{
+    29		struct hello_event *event;
+    30		struct hello_event *tmp;
+    31	
+    32		list_for_each_entry_safe(event, tmp, &hello_list, list) {
+    33			pr_info("Event time: %lld ns\n",
+    34				(long long)ktime_to_ns(event->timestamp));
+    35	
+    36			list_del(&event->list);
+    37			kfree(event);
+    38		}
+    39	}
+    40	
+    41	static int __init hello_init(void)
+    42	{
+    43		struct hello_event *event;
+    44		unsigned int i;
+    45	
+    46		if (count > 10) {
+    47			pr_err("Invalid count: %u\n", count);
+    48			return -EINVAL;
+    49		}
+    50	
+    51		if (count == 0 || (count >= 5 && count <= 10))
+    52			pr_warn("Warning: count = %u\n", count);
+    53	
+    54		for (i = 0; i < count; i++) {
+    55			event = kmalloc(sizeof(*event), GFP_KERNEL);
+    56	
+    57			if (!event) {
+    58				hello_free_events();
+    59				return -ENOMEM;
+    60			}
+    61	
+    62			event->timestamp = ktime_get();
+    63			list_add_tail(&event->list, &hello_list);
+    64	
+    65			pr_info("Hello, world!\n");
+    66		}
+    67	
+    68		return 0;
+    69	}
+    70	
+    71	static void __exit hello_exit(void)
+    72	{
+    73		hello_free_events();
+    74		pr_info("Goodbye, world!\n");
+    75	}
+    76	
+    77	module_init(hello_init);
+    78	module_exit(hello_exit);
+spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ spirit@Mariia:~/repos/lab6$ nano ~/repos/lab6/hello.cnano ~/repos/lab6/hello.c
+==[ Reading... ][ Read 78 lines ]  GNU nano 7.2                                 /home/spirit/repos/lab6/hello.c                                          ^G Help^O Write Out   ^W Where Is    ^K Cut^T Execute     ^C Location    M-U UndoM-A Set Mark^X Exit^R Read File   ^\ Replace     ^U Paste^J Justify     ^/ Go To Line  M-E RedoM-6 Copy// SPDX-License-Identifier: GPL-2.0#include <linux/init.h>#include <linux/module.h>#include <linux/kernel.h>#include <linux/moduleparam.h>#include <linux/errno.h>#include <linux/list.h>#include <linux/ktime.h>#include <linux/slab.h>MODULE_LICENSE("GPL");MODULE_AUTHOR("Lozinska Mariia");MODULE_DESCRIPTION("Hello World kernel module with timestamps");static unsigned int count = 1;module_param(count, uint, 0444);MODULE_PARM_DESC(count, "Number of Hello World messages");struct hello_event {struct list_head list;ktime_t timestamp;};static LIST_HEAD(hello_list);static void hello_free_events(void){struct hello_event *event;struct hello_event *tmp;*#include <linux/bug.h>78M78
+struct hello_event *tmp;78
+78
+list_for_each_entry_safe(event, tmp, &hello_list, list) {78
+pr_info("Event time: %lld ns\n",78
+(long long)ktime_to_ns(event->timestamp));78
+78
+list_del(&event->list);78
+kfree(event);78
+}78
+}78
+78
+static int __init hello_init(void)78
+{78
+struct hello_event *event;78
+unsigned int i;78
+78
+if (count > 10) {78
+pr_err("Invalid count: %u\n", count);78
+return -EINVAL;78
+}78
+78
+if (count == 0 || (count >= 5 && count <= 10))78
+pr_warn("Warning: count = %u\n", count);78
+78
+for (i = 0; i < count; i++) {78
+event = kmalloc(sizeof(*event), GFP_KERNEL);78
+78
+if (!event) {78
+hello_free_events();78
+return -ENOMEM;78
+}78
+78
+event->timestamp = ktime_get();78
+list_add_tail(&event->list, &hello_list);78Mpr_info("Event time: %lld ns\n",78Mlist_for_each_entry_safe(event, tmp, &hello_list, list) {78M78Mstruct hello_event *tmp;78Mstruct hello_event *event;78M{78Mstatic void hello_free_events(void)78M78Mstatic LIST_HEAD(hello_list);78M78M};78Mktime_t timestamp;78Mstruct list_head list;78Mstruct hello_event {78M78MMODULE_PARM_DESC(count, "Number of Hello World messages");78Mmodule_param(count, uint, 0444);78M78Mstatic unsigned int count = 1;78M78MMODULE_DESCRIPTION("Hello World kernel module with timestamps");78MMODULE_AUTHOR("Lozinska Mariia");78MMODULE_LICENSE("GPL");78M78M#include <linux/bug.h>78M#include <linux/slab.h>78M#include <linux/ktime.h>78M#include <linux/list.h>78M#include <linux/errno.h>78M#include <linux/moduleparam.h>78M#include <linux/kernel.h>78M#include <linux/module.h>78M#include <linux/init.h>78M// SPDX-License-Identifier: GPL-2.0/ SPDX-License-Identifier: GPL-2.0L-2.0-2.02.0.00
+struct hello_event *tmp;include <linux/init.h>it.h>t.h>.h>h>>
+include <linux/module.h>le.h>e.h>.h>h>>
+list_for_each_entry_safe(event, tmp, &hello_list, list) {include <linux/kernel.h>el.h>l.h>.h>h>>
+pr_info("Event time: %lld ns\n",include <linux/moduleparam.h>am.h>m.h>.h>h>>
+(long long)ktime_to_ns(event->timestamp));include <linux/errno.h>no.h>o.h>.h>h>>
+include <linux/list.h>st.h>t.h>.h>h>>
+list_del(&event->list);include <linux/ktime.h>me.h>e.h>.h>h>>
+kfree(event);include <linux/slab.h>ab.h>b.h>.h>h>>
+}include <linux/bug.h>ug.h>g.h>.h>h>>
+}
+GPL");PL");L");"););;
+static int __init hello_init(void)Lozinska Mariia");ia");a");"););;
+{Hello World kernel module with timestamps");ps");s");"););;
+struct hello_event *event;
+unsigned int i;taticnsignedsignedignednt = 1;= 1; 1;1;;
+
+if (count > 10) {intnt444);44);4););;
+pr_err("Invalid count: %u\n", count);Number of Hello World messages");es");s");"););;
+return -EINVAL;
+}tructent {nt {t { {{
+tructlist;ist;st;t;;
+if (count == 0 || (count >= 5 && count <= 10))_ttamp;amp;mp;p;;
+pr_warn("Warning: count = %u\n", count);;
+
+for (i = 0; i < count; i++) {taticist);st);t););;
+event = kmalloc(sizeof(*event), GFP_KERNEL);
+taticoidvoid)oid)id)d))
+if (!event) {
+hello_free_events();tructvent;ent;nt;t;;
+return -ENOMEM;truct*tmp;tmp;mp;p;;
+}
+st) {t) {) { {{
+event->timestamp = ktime_get();Event time: %lld ns\n",s\n",\n",n",",,
+list_add_tail(&event->list, &hello_list);ongongmp));p));)););;
+
+pr_info("Hello, world!\n");ist);st);t););;
+}ent);nt);t););;
+}
+return 0;
+}
+taticntvoid)oid)id)d))
+static void __exit hello_exit(void)
+{tructvent;ent;nt;t;;
+hello_free_events();nsignedsignedignednt i;t i; i;i;;
+pr_info("Goodbye, world!\n");
+}f10) {0) {) { {{
+Invalid count: %u\n"unt);nt);t););;
+module_init(hello_init);eturnNVAL;VAL;AL;L;;
+module_exit(hello_exit);}
+
+f 10))10))0))))) 
+Warning: count = %u\n"unt);nt);t););;
+
+or++) {+) {) { {{
+izeofNEL);EL);L););;
+
+fnt) {t) {) { {{
+ts();s();(););;
+eturnOMEM;MEM;EM;M;;
+}}
+
+et();t();(););;
+ist);st);t););;
+
+Hello, world!\n");\n");n");"););;
+}
+
+eturn 0;rn 0;n 0; 0;0;;
+
+
+taticoidvoid)oid)id)d))
+
+ts();s();(););;
+Goodbye, world!\n");\n");n");"););;
+
+
+nit);it);t););;
+xit);it);t););;pr_info("Hello, world!\n");}return 0;}static void __exit hello_exit(void){hello_free_events();pr_info("Goodbye, world!\n");}module_init(hello_init);module_exit(hello_exit);M-D DOS Format       M-A AppendB Backup FileC CancelM-M Mac Format         M-P Prepend^T BrowseFile Name to Write: /home/spirit/repos/lab6/hello.c                                                                       [ Writing... ] [ Wrote 83 lines ]^O Write Out   ^W Where Is    ^K Cut^T Execute     ^C LocationU Undo       M-A Set MarkX Exit  ^R Read File   ^\ Replace     ^U Paste^J Justify     ^/ Go To Line  M-E Redo M-6 Copy>spirit@Mariia:~/repos/lab6$ nano ~/repos/lab6/Makefilenano ~/repos/lab6/Makefile
+==[ Reading... ][ Read 10 lines ]  GNU nano 7.2                                /home/spirit/repos/lab6/Makefile                                          ^G Help^O Write Out   ^W Where Is    ^K Cut^T Execute     ^C Location    M-U UndoM-A Set Mark^X Exit^R Read File   ^\ Replace     ^U Paste^J Justify     ^/ Go To Line  M-E RedoM-6 Copyobj-m += hello.oKDIR ?= $(HOME)/repos/linux-stablePWD := $(shell pwd)all:$(MAKE) -C $(KDIR) M=$(PWD) modulesclean:$(MAKE) -C $(KDIR) M=$(PWD) clean*+= llo.olo.oo.o.oo
+
+?= (HOME)tableableblelee
+:=  pwd)pwd)wd)d))
+
+ll:::
+(MAKE)(KDIR)(PWD)dulesuleslesess
+
+lean:ean:an:n::
+(MAKE)(KDIR)(PWD)cleanleaneanannobj-m += hello.oKDIR ?= $(HOME)/repos/linux-stablePWD := $(shell pwd)ccflags-y += -gall:$(MAKE) -C $(KDIR) M=$(PWD) modulesclean:$(MAKE) -C $(KDIR) M=$(PWD) cleanM-D DOS Format       M-A AppendB Backup FileC CancelM-M Mac Format         M-P Prepend^T BrowseFile Name to Write: /home/spirit/repos/lab6/Makefile                                                                     [ Writing... ] [ Wrote 13 lines ]^O Write Out   ^W Where Is    ^K Cut^T Execute     ^C LocationU Undo       M-A Set MarkX Exit  ^R Read File   ^\ Replace     ^U Paste^J Justify     ^/ Go To Line  M-E Redo M-6 Copy>spirit@Mariia:~/repos/lab6$ make cleanmake clean
+make -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab6 clean
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+spirit@Mariia:~/repos/lab6$ makemake
+make -C /home/spirit/repos/linux-stable M=/home/spirit/repos/lab6 modules
+make[1]: Entering directory '/home/spirit/repos/linux-stable'
+  CC [M]  /home/spirit/repos/lab6/hello.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/spirit/repos/lab6/hello.mod.o
+  LD [M]  /home/spirit/repos/lab6/hello.ko
+make[1]: Leaving directory '/home/spirit/repos/linux-stable'
+spirit@Mariia:~/repos/lab6$ ls -lh hello.ko hello.ols -lh hello.ko hello.o
+-rw-r--r-- 1 spirit spirit 72K Oct 28 19:14 hello.ko
+-rw-r--r-- 1 spirit spirit 41K Oct 28 19:14 hello.o
+spirit@Mariia:~/repos/lab6$ modinfo hello.komodinfo hello.ko
+filename:       /home/spirit/repos/lab6/hello.ko
+description:    Hello World kernel module with debugging
+author:         Lozinska Maria
+license:        GPL
+depends:        
+name:           hello
+vermagic:       4.19.325 SMP mod_unload ARMv7 p2v8 
+parm:           count:Number of Hello World messages (uint)
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-readelf -S hello.o | grep debugarm-linux-gnueabihf-readelf -S hello.o | grep debug
+  [23] .debug_frame      PROGBITS        00000000 0002e4 000068 00      0   0  4
+  [24] .rel.debug_frame  REL             00000000 007944 000020 08   I 40  23  4
+  [25] .debug_info       PROGBITS        00000000 00034c 00386e 00      0   0  1
+  [26] .rel.debug_info   REL             00000000 007964 001c38 08   I 40  25  4
+  [27] .debug_abbrev     PROGBITS        00000000 003bba 0005bb 00      0   0  1
+  [28] .debug_loc        PROGBITS        00000000 004175 00002a 00      0   0  1
+  [29] .rel.debug_loc    REL             00000000 00959c 000020 08   I 40  28  4
+  [30] .debug_aranges    PROGBITS        00000000 00419f 000028 00      0   0  1
+  [31] .rel.debug_arange REL             00000000 0095bc 000018 08   I 40  30  4
+  [32] .debug_ranges     PROGBITS        00000000 0041c7 0001a8 00      0   0  1
+  [33] .rel.debug_ranges REL             00000000 0095d4 000290 08   I 40  32  4
+  [34] .debug_line       PROGBITS        00000000 00436f 000721 00      0   0  1
+  [35] .rel.debug_line   REL             00000000 009864 000010 08   I 40  34  4
+  [36] .debug_str        PROGBITS        00000000 004a90 002752 01  MS  0   0  1
+spirit@Mariia:~/repos/lab6$ cd ~/repos/busyboxcd ~/repos/busybox
+spirit@Mariia:~/repos/busybox$ cp rootfs.ext4 rootfs_lab6_test1.ext4
+cp rootfs.ext4 rootfs_lab6_test2.ext4cp rootfs.ext4 rootfs_lab6_test1.ext4
+cp rootfs.ext4 rootfs_lab6_test2.ext4
+spirit@Mariia:~/repos/busybox$ ls -lh rootfs*.ext4ls -lh rootfs*.ext4
+-rw-r--r-- 1 spirit spirit 144M Oct 27 17:57 rootfs.ext4
+-rw-r--r-- 1 spirit spirit 144M Oct 28 19:37 rootfs_lab6_test1.ext4
+-rw-r--r-- 1 spirit spirit 144M Oct 28 19:37 rootfs_lab6_test2.ext4
+spirit@Mariia:~/repos/busybox$ sudo mkdir -p /mnt/rootfs_lab6sudo mkdir -p /mnt/rootfs_lab6
+[sudo] password for spirit: 
+spirit@Mariia:~/repos/busybox$ sudo mount -o loop ~/repos/busybox/rootfs_lab6_test1.ext4 /mnt/rootfs_lab6sudo mount -o loop ~/repos/busybox/rootfs_lab6_test1.ext4 /mnt/rootfs_lab6
+spirit@Mariia:~/repos/busybox$ sudo mkdir -p /mnt/rootfs_lab6/root/lab6
+sudo cp ~/repos/lab6/hello.ko /mnt/rootfs_lab6/root/lab6/sudo mkdir -p /mnt/rootfs_lab6/root/lab6
+sudo cp ~/repos/lab6/hello.ko /mnt/rootfs_lab6/root/lab6/
+spirit@Mariia:~/repos/busybox$ sync
+sudo umount /mnt/rootfs_lab6spirit@Mariia:~/repos/busybox$ sync
+sudo umount /mnt/rootfs_lab6
+spirit@Mariia:~/repos/busybox$ sudo mount -o loop ~/repos/busybox/rootfs_lab6_test2.ext4 /mnt/rootfs_lab6
+sudo mkdir -p /mnt/rootfs_lab6/root/lab6
+sudo cp ~/repos/lab6/hello.ko /mnt/rootfs_lab6/root/lab6/
+sync
+sudo umount /mnt/rootfs_lab6spirit@Mariia:~/repos/busybox$ sudo mount -o loop ~/repos/busybox/rootfs_lab6_test2.ext4 /mnt/rootfs_lab6
+sudo mkdir -p /mnt/rootfs_lab6/root/lab6
+sudo cp ~/repos/lab6/hello.ko /mnt/rootfs_lab6/root/lab6/
+sync
+sudo umount /mnt/rootfs_lab6
+spirit@Mariia:~/repos/busybox$ qemu-system-arm \
+  -M virt \
+  -cpu cortex-a15 \
+  -m 512M \
+  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \
+  -drive file=~/repos/busybox/rootfs_lab6_test1.ext4,format=raw,if=none,id=hd0 \
+  -device virtio-blk-device,drive=hd0 \
+  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \
+  -nographicspirit@Mariia:~/repos/busybox$ qemu-system-arm \
+  -M virt \
+  -cpu cortex-a15 \
+  -m 512M \
+  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \
+  -drive file=~/repos/busybox/rootfs_lab6_test1.ext4,format=raw,if=none,id=hd0 \
+  -device virtio-blk-device,drive=hd0 \
+  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \
+  -nographic
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.19.325 (spirit@Mariia) (gcc version 8.3.0 (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36))) #1 SMP Wed Oct 14 16:48:26 UTC 2026
+[    0.000000] CPU: ARMv7 Processor [414fc0f0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] OF: fdt: Machine model: linux,dummy-virt
+[    0.000000] random: crng init done
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 64 MiB at 0x5c000000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] percpu: Embedded 16 pages/cpu s36748 r8192 d20596 u65536
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 130048
+[    0.000000] Kernel command line: root=/dev/vda rw rootwait console=ttyAMA0,115200
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 430496K/524288K available (12288K kernel code, 1618K rwdata, 4796K rodata, 2048K init, 394K bss, 28256K reserved, 65536K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xff800000   ( 496 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0x(ptrval) - 0x(ptrval)   (13280 kB)
+[    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (2048 kB)
+[    0.000000]       .data : 0x(ptrval) - 0x(ptrval)   (1619 kB)
+[    0.000000]        .bss : 0x(ptrval) - 0x(ptrval)   ( 395 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=16 to nr_cpu_ids=1.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] GICv2m: range[mem 0x08020000-0x08020fff], SPI[80:143]
+[    0.000000] arch_timer: cp15 timer(s) running at 62.50MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x1cd42e208c, max_idle_ns: 881590405314 ns
+[    0.000114] sched_clock: 56 bits at 62MHz, resolution 16ns, wraps every 4398046511096ns
+[    0.000206] Switching to timer-based delay loop, resolution 16ns
+[    0.003203] Console: colour dummy device 80x30
+[    0.004132] Calibrating delay loop (skipped), value calculated using timer frequency.. 125.00 BogoMIPS (lpj=625000)
+[    0.004212] CPU: Testing write buffer coherency: ok
+[    0.004911] CPU0: Spectre v2: firmware did not set auxiliary control register IBE bit, system vulnerable
+[    0.005034] CPU0: Spectre BHB: enabling loop workaround for all CPUs
+[    0.005096] pid_max: default: 32768 minimum: 301
+[    0.005790] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.005812] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.030070] /cpus/cpu@0 missing clock-frequency property
+[    0.030519] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.036209] Setting up static identity map for 0x40300000 - 0x403000a0
+[    0.037459] rcu: Hierarchical SRCU implementation.
+[    0.039359] EFI services will not be available.
+[    0.039941] smp: Bringing up secondary CPUs ...
+[    0.039994] smp: Brought up 1 node, 1 CPU
+[    0.040043] SMP: Total of 1 processors activated (125.00 BogoMIPS).
+[    0.040084] CPU: All CPU(s) started in SVC mode.
+[    0.071178] devtmpfs: initialized
+[    0.081742] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    0.098225] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.098867] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.104821] pinctrl core: initialized pinctrl subsystem
+[    0.113379] DMI not present or invalid.
+[    0.117371] NET: Registered protocol family 16
+[    0.132338] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.135550] cpuidle: using governor menu
+[    0.135977] No ATAGs?
+[    0.136927] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.136999] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.138887] Serial: AMBA PL011 UART driver
+[    0.155983] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 54, base_baud = 0) is a PL011 rev1
+[    0.163382] console [ttyAMA0] enabled
+[    0.199326] vgaarb: loaded
+[    0.200823] SCSI subsystem initialized
+[    0.202002] usbcore: registered new interface driver usbfs
+[    0.202235] usbcore: registered new interface driver hub
+[    0.202393] usbcore: registered new device driver usb
+[    0.203612] pps_core: LinuxPPS API ver. 1 registered
+[    0.203674] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.203817] PTP clock support registered
+[    0.204069] EDAC MC: Ver: 3.0.0
+[    0.225400] clocksource: Switched to clocksource arch_sys_counter
+[    0.327904] NET: Registered protocol family 2
+[    0.329540] IP idents hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.333362] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes)
+[    0.333593] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.333813] TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.333990] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.336663] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.339339] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.340879] NET: Registered protocol family 1
+[    0.346199] RPC: Registered named UNIX socket transport module.
+[    0.346610] RPC: Registered udp transport module.
+[    0.346791] RPC: Registered tcp transport module.
+[    0.346942] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.362683] Initialise system trusted keyrings
+[    0.365743] workingset: timestamp_bits=30 max_order=17 bucket_order=0
+[    0.374079] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.381036] NFS: Registering the id_resolver key type
+[    0.382122] Key type id_resolver registered
+[    0.382425] Key type id_legacy registered
+[    0.383383] ntfs: driver 2.1.32 [Flags: R/O].
+[    0.395678] Key type asymmetric registered
+[    0.395876] Asymmetric key parser 'x509' registered
+[    0.396234] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.396483] io scheduler noop registered
+[    0.396622] io scheduler deadline registered
+[    0.396992] io scheduler cfq registered (default)
+[    0.397102] io scheduler mq-deadline registered
+[    0.397172] io scheduler kyber registered
+[    0.406579] pl061_gpio 9030000.pl061: PL061 GPIO chip @0x09030000 registered
+[    0.412407] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.413835] pci-host-generic 4010000000.pcie:    IO 0x3eff0000..0x3effffff -> 0x00000000
+[    0.416711] pci-host-generic 4010000000.pcie:   MEM 0x10000000..0x3efeffff -> 0x10000000
+[    0.417090] pci-host-generic 4010000000.pcie:   MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.419571] pci-host-generic 4010000000.pcie: can't claim ECAM area [mem 0x10000000-0x1fffffff]: address conflict with pcie@10000000 [mem 0x10000000-0x3efeffff]
+[    0.421484] pci-host-generic: probe of 4010000000.pcie failed with error -16
+[    0.474917] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.477646] SuperH (H)SCI(F) driver initialized
+[    0.478236] msm_serial: driver initialized
+[    0.478392] STMicroelectronics ASC driver initialized
+[    0.479066] STM32 USART driver initialized
+[    0.507614] brd: module loaded
+[    0.525119] loop: module loaded
+[    0.544780] virtio_blk virtio0: [vda] 292969 512-byte logical blocks (150 MB/143 MiB)
+[    0.582196] CAN device driver interface
+[    0.583699] bgmac_bcma: Broadcom 47xx GBit MAC driver loaded
+[    0.585798] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    0.586016] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.586612] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    0.587446] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.593900] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    0.594382] usbcore: registered new interface driver pegasus
+[    0.595298] usbcore: registered new interface driver asix
+[    0.595987] usbcore: registered new interface driver ax88179_178a
+[    0.596444] usbcore: registered new interface driver cdc_ether
+[    0.597007] usbcore: registered new interface driver smsc75xx
+[    0.597638] usbcore: registered new interface driver smsc95xx
+[    0.598386] usbcore: registered new interface driver net1080
+[    0.599447] usbcore: registered new interface driver cdc_subset
+[    0.600214] usbcore: registered new interface driver zaurus
+[    0.600750] usbcore: registered new interface driver cdc_ncm
+[    0.604313] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.605462] ehci-pci: EHCI PCI platform driver
+[    0.606039] ehci-platform: EHCI generic platform driver
+[    0.606460] ehci-omap: OMAP-EHCI Host Controller driver
+[    0.607140] ehci-orion: EHCI orion driver
+[    0.607415] SPEAr-ehci: EHCI SPEAr driver
+[    0.607629] ehci-st: EHCI STMicroelectronics driver
+[    0.607944] ehci-exynos: EHCI EXYNOS driver
+[    0.608178] ehci-atmel: EHCI Atmel driver
+[    0.608419] tegra-ehci: Tegra EHCI driver
+[    0.608743] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.609024] ohci-pci: OHCI PCI platform driver
+[    0.609380] ohci-platform: OHCI generic platform driver
+[    0.609663] SPEAr-ohci: OHCI SPEAr driver
+[    0.609941] ohci-st: OHCI STMicroelectronics driver
+[    0.610186] ohci-atmel: OHCI Atmel driver
+[    0.611234] usbcore: registered new interface driver usb-storage
+[    0.611704] usbcore: registered new interface driver usbserial_generic
+[    0.611981] usbserial: USB Serial support registered for generic
+[    0.612167] usbcore: registered new interface driver ftdi_sio
+[    0.612347] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    0.612519] usbcore: registered new interface driver pl2303
+[    0.612627] usbserial: USB Serial support registered for pl2303
+[    0.612780] usbcore: registered new interface driver usb_serial_simple
+[    0.612899] usbserial: USB Serial support registered for carelink
+[    0.613031] usbserial: USB Serial support registered for flashloader
+[    0.613156] usbserial: USB Serial support registered for funsoft
+[    0.613360] usbserial: USB Serial support registered for google
+[    0.613480] usbserial: USB Serial support registered for hp4x
+[    0.613654] usbserial: USB Serial support registered for kaufmann
+[    0.613840] usbserial: USB Serial support registered for libtransistor
+[    0.614049] usbserial: USB Serial support registered for moto_modem
+[    0.614487] usbserial: USB Serial support registered for motorola_tetra
+[    0.614902] usbserial: USB Serial support registered for nokia
+[    0.615088] usbserial: USB Serial support registered for novatel_gps
+[    0.615205] usbserial: USB Serial support registered for siemens_mpi
+[    0.615335] usbserial: USB Serial support registered for suunto
+[    0.615448] usbserial: USB Serial support registered for vivopay
+[    0.615540] usbserial: USB Serial support registered for zio
+[    0.625326] rtc-pl031 9010000.pl031: rtc core: registered pl031 as rtc0
+[    0.627350] i2c /dev entries driver
+[    0.635665] sdhci: Secure Digital Host Controller Interface driver
+[    0.635784] sdhci: Copyright(c) Pierre Ossman
+[    0.636523] Synopsys Designware Multimedia Card Interface Driver
+[    0.637198] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.638692] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.639724] usbcore: registered new interface driver usbhid
+[    0.639801] usbhid: USB HID core driver
+[    0.642923] NET: Registered protocol family 10
+[    0.655884] Segment Routing with IPv6
+[    0.656834] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    0.661897] NET: Registered protocol family 17
+[    0.662887] can: controller area network core (rev 20170425 abi 9)
+[    0.663650] NET: Registered protocol family 29
+[    0.663958] can: raw protocol (rev 20170425)
+[    0.664296] can: broadcast manager protocol (rev 20170425 t)
+[    0.664972] can: netlink gateway (rev 20170425) max_hops=1
+[    0.666848] Key type dns_resolver registered
+[    0.667594] ThumbEE CPU extension supported.
+[    0.667874] Registering SWP/SWPB emulation handler
+[    0.670391] Loading compiled-in X.509 certificates
+[    0.679292] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.681402] rtc-pl031 9010000.pl031: setting system clock to 2026-10-28 19:38:32 UTC (1793216312)
+[    0.685959] uart-pl011 9000000.pl011: no DMA platform data
+[    0.763200] EXT4-fs (vda): recovery complete
+[    0.769267] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    0.772022] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    0.778984] devtmpfs: mounted
+[    0.890386] Freeing unused kernel memory: 2048K
+[    0.903498] Run /sbin/init as init process
+
+Please press Enter to activate this console. 
+/ # insmod /root/lab6/hello.ko count=1
+[   11.198192] hello: loading out-of-tree module taints kernel.
+[   11.205755] Hello, world!
+/ # ls -la /sys/module/hello/sections/
+total 0
+drwxr-xr-x    2 root     root             0 Oct 28 19:38 .
+drwxr-xr-x    6 root     root             0 Oct 28 19:38 ..
+-r--------    1 root     root            11 Oct 28 19:38 .ARM.exidx.exit.text
+-r--------    1 root     root            11 Oct 28 19:38 .ARM.exidx.init.text
+-r--------    1 root     root            11 Oct 28 19:38 .data
+-r--------    1 root     root            11 Oct 28 19:38 .exit.text
+-r--------    1 root     root            11 Oct 28 19:38 .gnu.linkonce.this_module
+-r--------    1 root     root            11 Oct 28 19:38 .init.plt
+-r--------    1 root     root            11 Oct 28 19:38 .init.text
+-r--------    1 root     root            11 Oct 28 19:38 .note.Linux
+-r--------    1 root     root            11 Oct 28 19:38 .note.gnu.build-id
+-r--------    1 root     root            11 Oct 28 19:38 .plt
+-r--------    1 root     root            11 Oct 28 19:38 .rodata
+-r--------    1 root     root            11 Oct 28 19:38 .rodata.str
+-r--------    1 root     root            11 Oct 28 19:38 .rodata.str1.4
+-r--------    1 root     root            11 Oct 28 19:38 .strtab
+-r--------    1 root     root            11 Oct 28 19:38 .symtab
+-r--------    1 root     root            11 Oct 28 19:38 __bug_table
+-r--------    1 root     root            11 Oct 28 19:38 __param
+/ # cat /sys/module/hello/sections/.text
+cat: can't open '/sys/module/hello/sections/.text': No such file or directory
+/ # cat /sys/module/hello/sections/.init.text
+0xbf005000
+/ # cat /sys/module/hello/sections/.exit.text
+0xbf000000
+/ # cat /sys/module/hello/sections/.data
+0xbf002000
+/ # rmmod hello
+[   79.054321] Event time: 11181572512 ns
+[   79.054766] Goodbye, world!
+/ # insmod /root/lab6/hello.ko count=3
+[  109.702689] Hello, world!
+[  109.702842] Hello, world!
+[  109.703464] ------------[ cut here ]------------
+[  109.703579] kernel BUG at /home/spirit/repos/lab6/hello.c:65!
+[  109.703740] Internal error: Oops - BUG: 0 [#1] SMP ARM
+[  109.703965] Modules linked in: hello(O+) [last unloaded: hello]
+[  109.704601] CPU: 0 PID: 75 Comm: insmod Tainted: G           O      4.19.325 #1
+[  109.704712] Hardware name: Generic DT based system
+[  109.705289] PC is at hello_init+0x6c/0x1000 [hello]
+[  109.705379] LR is at hello_init+0xb4/0x1000 [hello]
+[  109.705456] pc : [<bf00d06c>]    lr : [<bf00d0b4>]    psr: 600f0013
+[  109.705554] sp : da5a1db8  ip : 00000000  fp : bf00a040
+[  109.705618] r10: 00000000  r9 : bf00a004  r8 : 006000c0
+[  109.705710] r7 : c135d34c  r6 : bf00a000  r5 : 00000002  r4 : da5b1e40
+[  109.705795] r3 : 00000003  r2 : f213df4d  r1 : 1a569000  r0 : 0000000d
+[  109.705957] Flags: nZCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[  109.706081] Control: 10c5387d  Table: 5a57006a  DAC: 00000051
+[  109.706379] Process insmod (pid: 75, stack limit = 0xba1568e0)
+[  109.706511] Stack: (0xda5a1db8 to 0xda5a2000)
+[  109.706656] 1da0:                                                       c18881a0 c1704c48
+[  109.706851] 1dc0: ffffe000 bf00d000 00000000 c1704c48 00000000 c030362c da5b1d40 c04f2cd4
+[  109.706973] 1de0: 00000000 00000002 00000000 00000000 da5b1d24 c04f36c0 00000000 e0996fff
+[  109.707192] 1e00: ffe00000 fffff000 c0f12218 da5b1280 dbf245e0 dbbd9000 dbf245e0 00000001
+[  109.707397] 1e20: bf00a040 f213df4d bf00a040 00000002 da5b1600 00000002 da5b1d40 c03d2b4c
+[  109.707532] 1e40: da5b1d40 c04640e0 da5a1f30 da5a1f30 00000002 da5b1d00 00000002 c03d4f00
+[  109.707655] 1e60: bf00a04c 00007fff bf00a040 c03d1d88 da58a418 bf00a088 da58a678 bf00a234
+[  109.707810] 1e80: 00000001 bf00a170 c135be18 c1221c34 c1221ca4 c1704c48 c1708f04 da4be700
+[  109.708568] 1ea0: fffff000 e0800000 da4be700 da5b1600 00000000 00000000 00000000 00000000
+[  109.709066] 1ec0: 00000000 00000000 6e72656b 00006c65 00000000 00000000 00000000 00000000
+[  109.709657] 1ee0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+[  109.709926] 1f00: 00000000 f213df4d 00000080 00001ec4 00000000 e0995ec4 0012d114 c1704c48
+[  109.710317] 1f20: 0011b1f8 ffffe000 00000051 c03d5364 e09842a2 e0984380 e0984000 00011ec4
+[  109.710511] 1f40: e09956f4 e0995518 e0991a24 00003000 00003040 00000000 00000000 00000000
+[  109.710658] 1f60: 0000170c 0000002f 00000030 00000018 00000000 00000010 00000000 f213df4d
+[  109.710795] 1f80: 000f411e 0011b1f8 b6f66950 00011ec4 00000080 c0301264 da5a0000 00000080
+[  109.710960] 1fa0: 000f411e c0301000 0011b1f8 b6f66950 0011b250 00011ec4 0011b1f8 00000000
+[  109.711150] 1fc0: 0011b1f8 b6f66950 00011ec4 00000080 00000001 bec68e90 001086c4 000f411e
+[  109.711855] 1fe0: bec68b48 bec68b38 0003b270 b6e201b0 600f0010 0011b250 00000000 00000000
+[  109.714150] [<bf00d06c>] (hello_init [hello]) from [<c030362c>] (do_one_initcall+0x54/0x214)
+[  109.714523] [<c030362c>] (do_one_initcall) from [<c03d2b4c>] (do_init_module+0x48/0x1ec)
+[  109.714709] [<c03d2b4c>] (do_init_module) from [<c03d4f00>] (load_module+0x21a8/0x24b4)
+[  109.714863] [<c03d4f00>] (load_module) from [<c03d5364>] (sys_init_module+0x158/0x18c)
+[  109.715008] [<c03d5364>] (sys_init_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
+[  109.715139] Exception stack(0xda5a1fa8 to 0xda5a1ff0)
+[  109.715255] 1fa0:                   0011b1f8 b6f66950 0011b250 00011ec4 0011b1f8 00000000
+[  109.715415] 1fc0: 0011b1f8 b6f66950 00011ec4 00000080 00000001 bec68e90 001086c4 000f411e
+[  109.715575] 1fe0: bec68b48 bec68b38 0003b270 b6e201b0
+[  109.715864] Code: 9a000015 e3530003 03550002 1a000000 (e7f001f2) 
+[  109.716232] ---[ end trace cd303740cebb5caf ]---
+Segmentation fault
+/ # poweroff -f
+[  158.872997] reboot: Power down
+spirit@Mariia:~/repos/busybox$ qemu-system-arm \
+  -M virt \
+  -cpu cortex-a15 \
+  -m 512M \
+  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \
+  -drive file=~/repos/busybox/rootfs_lab6_test2.ext4,format=raw,if=none,id=hd0 \
+  -device virtio-blk-device,drive=hd0 \
+  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \
+  -nographicspirit@Mariia:~/repos/busybox$ qemu-system-arm \
+  -M virt \
+  -cpu cortex-a15 \
+  -m 512M \
+  -kernel ~/repos/linux-stable/arch/arm/boot/zImage \
+  -drive file=~/repos/busybox/rootfs_lab6_test2.ext4,format=raw,if=none,id=hd0 \
+  -device virtio-blk-device,drive=hd0 \
+  -append "root=/dev/vda rw rootwait console=ttyAMA0,115200" \
+  -nographic
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.19.325 (spirit@Mariia) (gcc version 8.3.0 (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36))) #1 SMP Wed Oct 14 16:48:26 UTC 2026
+[    0.000000] CPU: ARMv7 Processor [414fc0f0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] OF: fdt: Machine model: linux,dummy-virt
+[    0.000000] random: crng init done
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 64 MiB at 0x5c000000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] percpu: Embedded 16 pages/cpu s36748 r8192 d20596 u65536
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 130048
+[    0.000000] Kernel command line: root=/dev/vda rw rootwait console=ttyAMA0,115200
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 430496K/524288K available (12288K kernel code, 1618K rwdata, 4796K rodata, 2048K init, 394K bss, 28256K reserved, 65536K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xff800000   ( 496 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0x(ptrval) - 0x(ptrval)   (13280 kB)
+[    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (2048 kB)
+[    0.000000]       .data : 0x(ptrval) - 0x(ptrval)   (1619 kB)
+[    0.000000]        .bss : 0x(ptrval) - 0x(ptrval)   ( 395 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=16 to nr_cpu_ids=1.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] GICv2m: range[mem 0x08020000-0x08020fff], SPI[80:143]
+[    0.000000] arch_timer: cp15 timer(s) running at 62.50MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x1cd42e208c, max_idle_ns: 881590405314 ns
+[    0.000113] sched_clock: 56 bits at 62MHz, resolution 16ns, wraps every 4398046511096ns
+[    0.000204] Switching to timer-based delay loop, resolution 16ns
+[    0.004186] Console: colour dummy device 80x30
+[    0.005108] Calibrating delay loop (skipped), value calculated using timer frequency.. 125.00 BogoMIPS (lpj=625000)
+[    0.005188] CPU: Testing write buffer coherency: ok
+[    0.005920] CPU0: Spectre v2: firmware did not set auxiliary control register IBE bit, system vulnerable
+[    0.006007] CPU0: Spectre BHB: enabling loop workaround for all CPUs
+[    0.006061] pid_max: default: 32768 minimum: 301
+[    0.006759] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.006782] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.022441] /cpus/cpu@0 missing clock-frequency property
+[    0.022628] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.027030] Setting up static identity map for 0x40300000 - 0x403000a0
+[    0.028132] rcu: Hierarchical SRCU implementation.
+[    0.029970] EFI services will not be available.
+[    0.030530] smp: Bringing up secondary CPUs ...
+[    0.030590] smp: Brought up 1 node, 1 CPU
+[    0.030648] SMP: Total of 1 processors activated (125.00 BogoMIPS).
+[    0.030691] CPU: All CPU(s) started in SVC mode.
+[    0.053926] devtmpfs: initialized
+[    0.059404] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    0.078611] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.079267] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.087784] pinctrl core: initialized pinctrl subsystem
+[    0.103095] DMI not present or invalid.
+[    0.107076] NET: Registered protocol family 16
+[    0.123401] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.127626] cpuidle: using governor menu
+[    0.128284] No ATAGs?
+[    0.129143] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.129193] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.131103] Serial: AMBA PL011 UART driver
+[    0.152062] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 54, base_baud = 0) is a PL011 rev1
+[    0.160706] console [ttyAMA0] enabled
+[    0.182873] vgaarb: loaded
+[    0.184213] SCSI subsystem initialized
+[    0.185227] usbcore: registered new interface driver usbfs
+[    0.185441] usbcore: registered new interface driver hub
+[    0.185932] usbcore: registered new device driver usb
+[    0.187061] pps_core: LinuxPPS API ver. 1 registered
+[    0.187145] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.187275] PTP clock support registered
+[    0.187501] EDAC MC: Ver: 3.0.0
+[    0.200091] clocksource: Switched to clocksource arch_sys_counter
+[    0.270179] NET: Registered protocol family 2
+[    0.271128] IP idents hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.273618] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes)
+[    0.273801] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.273984] TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.274134] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.275200] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.276317] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.277830] NET: Registered protocol family 1
+[    0.281063] RPC: Registered named UNIX socket transport module.
+[    0.281390] RPC: Registered udp transport module.
+[    0.281555] RPC: Registered tcp transport module.
+[    0.281704] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.292433] Initialise system trusted keyrings
+[    0.293433] workingset: timestamp_bits=30 max_order=17 bucket_order=0
+[    0.299536] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.302836] NFS: Registering the id_resolver key type
+[    0.303121] Key type id_resolver registered
+[    0.303191] Key type id_legacy registered
+[    0.304014] ntfs: driver 2.1.32 [Flags: R/O].
+[    0.309726] Key type asymmetric registered
+[    0.309843] Asymmetric key parser 'x509' registered
+[    0.310127] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.310346] io scheduler noop registered
+[    0.310443] io scheduler deadline registered
+[    0.310716] io scheduler cfq registered (default)
+[    0.310803] io scheduler mq-deadline registered
+[    0.310947] io scheduler kyber registered
+[    0.323514] pl061_gpio 9030000.pl061: PL061 GPIO chip @0x09030000 registered
+[    0.326690] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.327732] pci-host-generic 4010000000.pcie:    IO 0x3eff0000..0x3effffff -> 0x00000000
+[    0.329445] pci-host-generic 4010000000.pcie:   MEM 0x10000000..0x3efeffff -> 0x10000000
+[    0.329609] pci-host-generic 4010000000.pcie:   MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.330879] pci-host-generic 4010000000.pcie: can't claim ECAM area [mem 0x10000000-0x1fffffff]: address conflict with pcie@10000000 [mem 0x10000000-0x3efeffff]
+[    0.332611] pci-host-generic: probe of 4010000000.pcie failed with error -16
+[    0.390627] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.394302] SuperH (H)SCI(F) driver initialized
+[    0.394984] msm_serial: driver initialized
+[    0.395152] STMicroelectronics ASC driver initialized
+[    0.395850] STM32 USART driver initialized
+[    0.421259] brd: module loaded
+[    0.437182] loop: module loaded
+[    0.456469] virtio_blk virtio0: [vda] 292969 512-byte logical blocks (150 MB/143 MiB)
+[    0.492212] CAN device driver interface
+[    0.493054] bgmac_bcma: Broadcom 47xx GBit MAC driver loaded
+[    0.493924] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    0.494016] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.494202] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    0.494307] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.496902] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    0.497071] usbcore: registered new interface driver pegasus
+[    0.497295] usbcore: registered new interface driver asix
+[    0.497390] usbcore: registered new interface driver ax88179_178a
+[    0.497484] usbcore: registered new interface driver cdc_ether
+[    0.497624] usbcore: registered new interface driver smsc75xx
+[    0.497733] usbcore: registered new interface driver smsc95xx
+[    0.497824] usbcore: registered new interface driver net1080
+[    0.497905] usbcore: registered new interface driver cdc_subset
+[    0.497987] usbcore: registered new interface driver zaurus
+[    0.498082] usbcore: registered new interface driver cdc_ncm
+[    0.501505] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.502064] ehci-pci: EHCI PCI platform driver
+[    0.503188] ehci-platform: EHCI generic platform driver
+[    0.504032] ehci-omap: OMAP-EHCI Host Controller driver
+[    0.504454] ehci-orion: EHCI orion driver
+[    0.504603] SPEAr-ehci: EHCI SPEAr driver
+[    0.505111] ehci-st: EHCI STMicroelectronics driver
+[    0.507307] ehci-exynos: EHCI EXYNOS driver
+[    0.507962] ehci-atmel: EHCI Atmel driver
+[    0.508325] tegra-ehci: Tegra EHCI driver
+[    0.508598] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.509219] ohci-pci: OHCI PCI platform driver
+[    0.509495] ohci-platform: OHCI generic platform driver
+[    0.509688] SPEAr-ohci: OHCI SPEAr driver
+[    0.509805] ohci-st: OHCI STMicroelectronics driver
+[    0.509954] ohci-atmel: OHCI Atmel driver
+[    0.510600] usbcore: registered new interface driver usb-storage
+[    0.510925] usbcore: registered new interface driver usbserial_generic
+[    0.511146] usbserial: USB Serial support registered for generic
+[    0.511301] usbcore: registered new interface driver ftdi_sio
+[    0.511405] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    0.511521] usbcore: registered new interface driver pl2303
+[    0.511586] usbserial: USB Serial support registered for pl2303
+[    0.511675] usbcore: registered new interface driver usb_serial_simple
+[    0.511768] usbserial: USB Serial support registered for carelink
+[    0.511918] usbserial: USB Serial support registered for flashloader
+[    0.512010] usbserial: USB Serial support registered for funsoft
+[    0.512087] usbserial: USB Serial support registered for google
+[    0.512159] usbserial: USB Serial support registered for hp4x
+[    0.512240] usbserial: USB Serial support registered for kaufmann
+[    0.512305] usbserial: USB Serial support registered for libtransistor
+[    0.512380] usbserial: USB Serial support registered for moto_modem
+[    0.512455] usbserial: USB Serial support registered for motorola_tetra
+[    0.512530] usbserial: USB Serial support registered for nokia
+[    0.512622] usbserial: USB Serial support registered for novatel_gps
+[    0.512698] usbserial: USB Serial support registered for siemens_mpi
+[    0.512772] usbserial: USB Serial support registered for suunto
+[    0.512881] usbserial: USB Serial support registered for vivopay
+[    0.512961] usbserial: USB Serial support registered for zio
+[    0.518687] rtc-pl031 9010000.pl031: rtc core: registered pl031 as rtc0
+[    0.522659] i2c /dev entries driver
+[    0.532676] sdhci: Secure Digital Host Controller Interface driver
+[    0.532791] sdhci: Copyright(c) Pierre Ossman
+[    0.533488] Synopsys Designware Multimedia Card Interface Driver
+[    0.534150] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.535948] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.536863] usbcore: registered new interface driver usbhid
+[    0.536949] usbhid: USB HID core driver
+[    0.540518] NET: Registered protocol family 10
+[    0.544725] Segment Routing with IPv6
+[    0.545066] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    0.546901] NET: Registered protocol family 17
+[    0.547291] can: controller area network core (rev 20170425 abi 9)
+[    0.547593] NET: Registered protocol family 29
+[    0.547684] can: raw protocol (rev 20170425)
+[    0.547805] can: broadcast manager protocol (rev 20170425 t)
+[    0.547926] can: netlink gateway (rev 20170425) max_hops=1
+[    0.548573] Key type dns_resolver registered
+[    0.549198] ThumbEE CPU extension supported.
+[    0.549311] Registering SWP/SWPB emulation handler
+[    0.550883] Loading compiled-in X.509 certificates
+[    0.562154] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.564597] rtc-pl031 9010000.pl031: setting system clock to 2026-10-28 19:41:15 UTC (1793216475)
+[    0.576566] uart-pl011 9000000.pl011: no DMA platform data
+[    0.643782] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    0.646604] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    0.659154] devtmpfs: mounted
+[    0.788745] Freeing unused kernel memory: 2048K
+[    0.793171] Run /sbin/init as init process
+
+Please press Enter to activate this console. 
+/ # insmod /root/lab6/hello.ko count=11
+[    9.172427] hello: loading out-of-tree module taints kernel.
+[    9.177699] ------------[ cut here ]------------
+[    9.177813] kernel BUG at /home/spirit/repos/lab6/hello.c:49!
+[    9.177920] Internal error: Oops - BUG: 0 [#1] SMP ARM
+[    9.178246] Modules linked in: hello(O+)
+[    9.178637] CPU: 0 PID: 65 Comm: insmod Tainted: G           O      4.19.325 #1
+[    9.178752] Hardware name: Generic DT based system
+[    9.179407] PC is at hello_init+0x18/0x1000 [hello]
+[    9.179694] LR is at do_one_initcall+0x54/0x214
+[    9.179957] pc : [<bf005018>]    lr : [<c030362c>]    psr: 200f0013
+[    9.180247] sp : da593db8  ip : da5c6800  fp : bf002040
+[    9.180468] r10: 00000000  r9 : c1704c48  r8 : 00000000
+[    9.180689] r7 : bf005000  r6 : ffffe000  r5 : c1704c48  r4 : c18881a0
+[    9.180899] r3 : bf002000  r2 : d0796f4f  r1 : 0000000b  r0 : 00000000
+[    9.181191] Flags: nzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[    9.181440] Control: 10c5387d  Table: 5a59806a  DAC: 00000051
+[    9.182185] Process insmod (pid: 65, stack limit = 0x5d700d28)
+[    9.182720] Stack: (0xda593db8 to 0xda594000)
+[    9.183365] 3da0:                                                       c18881a0 c1704c48
+[    9.183554] 3dc0: ffffe000 bf005000 00000000 c1704c48 00000000 c030362c da5c6700 c04f2cd4
+[    9.183708] 3de0: 00210d00 00000002 c1704c48 da53e080 da5c66e4 c04f36c0 00000000 e0983fff
+[    9.183844] 3e00: ffe00000 fffff000 8040003f da53e400 dbf23fe0 d0796f4f dbf23fe0 da53e080
+[    9.184026] 3e20: bf002040 d0796f4f bf002040 00000002 da5c67c0 00000002 da5c6700 c03d2b4c
+[    9.184182] 3e40: 00000001 c03d4ee4 da593f30 da593f30 00000002 da5c66c0 00000002 c03d4f00
+[    9.184386] 3e60: bf00204c 00007fff bf002040 c03d1d88 da578418 bf002088 da578678 bf002234
+[    9.184573] 3e80: 00000001 bf002170 c135be18 c1221c34 c1221ca4 c1704c48 c1708f04 da4be600
+[    9.184828] 3ea0: fffff000 e0800000 da4be600 da53e080 00000000 00000000 00000000 00000000
+[    9.185038] 3ec0: 00000000 00000000 6e72656b 00006c65 00000000 00000000 00000000 00000000
+[    9.185204] 3ee0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+[    9.185434] 3f00: 00000000 d0796f4f 00000080 00001ec4 00000000 e0982ec4 0012d114 c1704c48
+[    9.185555] 3f20: 0011b1f8 ffffe000 00000051 c03d5364 e09712a2 e0971380 e0971000 00011ec4
+[    9.185708] 3f40: e09826f4 e0982518 e097ea24 00003000 00003040 00000000 00000000 00000000
+[    9.185854] 3f60: 0000170c 0000002f 00000030 00000018 00000000 00000010 00000000 d0796f4f
+[    9.186010] 3f80: 000f411e 0011b1f8 b6f94950 00011ec4 00000080 c0301264 da592000 00000080
+[    9.186175] 3fa0: 000f411e c0301000 0011b1f8 b6f94950 0011b250 00011ec4 0011b1f8 00000000
+[    9.186338] 3fc0: 0011b1f8 b6f94950 00011ec4 00000080 00000001 beac8e90 001086c4 000f411e
+[    9.186507] 3fe0: beac8b48 beac8b38 0003b270 b6e4e1b0 600f0010 0011b250 00000000 00000000
+[    9.187136] [<bf005018>] (hello_init [hello]) from [<c030362c>] (do_one_initcall+0x54/0x214)
+[    9.187402] [<c030362c>] (do_one_initcall) from [<c03d2b4c>] (do_init_module+0x48/0x1ec)
+[    9.187527] [<c03d2b4c>] (do_init_module) from [<c03d4f00>] (load_module+0x21a8/0x24b4)
+[    9.187719] [<c03d4f00>] (load_module) from [<c03d5364>] (sys_init_module+0x158/0x18c)
+[    9.187870] [<c03d5364>] (sys_init_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
+[    9.187991] Exception stack(0xda593fa8 to 0xda593ff0)
+[    9.188107] 3fa0:                   0011b1f8 b6f94950 0011b250 00011ec4 0011b1f8 00000000
+[    9.188270] 3fc0: 0011b1f8 b6f94950 00011ec4 00000080 00000001 beac8e90 001086c4 000f411e
+[    9.188437] 3fe0: beac8b48 beac8b38 0003b270 b6e4e1b0
+[    9.188720] Code: e92d47f0 e5931000 e351000a 9a000000 (e7f001f2) 
+[    9.189381] ---[ end trace e6ac4026f04dcb28 ]---
+Segmentation fault
+/ # poweroff -f
+[   54.283976] reboot: Power down
+spirit@Mariia:~/repos/busybox$ cd ~/repos/lab6cd ~/repos/lab6
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-nm -n hello.o | grep hello_initarm-linux-gnueabihf-nm -n hello.o | grep hello_init
+00000000 t hello_init
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-addr2line -e hello.o -f -p 0x18arm-linux-gnueabihf-addr2line -e hello.o -f -p 0x18
+hello_init at /home/spirit/repos/lab6/hello.c:49 (discriminator 1)
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-addr2line -e hello.o -f -p 0x100arm-linux-gnueabihf-addr2line -e hello.o -f -p 0x100
+?? ??:0
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-objdump -t hello.o | grep hello_initarm-linux-gnueabihf-objdump -t hello.o | grep hello_init
+00000000 l     F .init.text	000000c4 hello_init
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-objdump -d -l -j .init.text hello.oarm-linux-gnueabihf-objdump -d -l -j .init.text hello.o
+
+hello.o:     file format elf32-littlearm
+
+
+Disassembly of section .init.text:
+
+00000000 <init_module>:
+hello_init():
+/home/spirit/repos/lab6/hello.c:49
+   0:	e3003000 	movw	r3, #0
+   4:	e3403000 	movt	r3, #0
+/home/spirit/repos/lab6/hello.c:44
+   8:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
+/home/spirit/repos/lab6/hello.c:49
+   c:	e5931000 	ldr	r1, [r3]
+  10:	e351000a 	cmp	r1, #10
+  14:	9a000000 	bls	1c <init_module+0x1c>
+/home/spirit/repos/lab6/hello.c:49 (discriminator 1)
+  18:	e7f001f2 	.word	0xe7f001f2
+/home/spirit/repos/lab6/hello.c:51
+  1c:	e1a06003 	mov	r6, r3
+  20:	e2413005 	sub	r3, r1, #5
+  24:	e3510000 	cmp	r1, #0
+  28:	13530005 	cmpne	r3, #5
+  2c:	8a000002 	bhi	3c <init_module+0x3c>
+/home/spirit/repos/lab6/hello.c:52
+  30:	e3000000 	movw	r0, #0
+  34:	e3400000 	movt	r0, #0
+  38:	ebfffffe 	bl	0 <printk>
+__list_add():
+/home/spirit/repos/linux-stable/./include/linux/list.h:64 (discriminator 1)
+  3c:	e59f907c 	ldr	r9, [pc, #124]	; c0 <init_module+0xc0>
+kmalloc():
+/home/spirit/repos/linux-stable/./include/linux/slab.h:515 (discriminator 1)
+  40:	e3007000 	movw	r7, #0
+  44:	e3a080c0 	mov	r8, #192	; 0xc0
+  48:	e3407000 	movt	r7, #0
+  4c:	e3408060 	movt	r8, #96	; 0x60
+hello_init():
+/home/spirit/repos/lab6/hello.c:44 (discriminator 1)
+  50:	e3a05000 	mov	r5, #0
+/home/spirit/repos/lab6/hello.c:54 (discriminator 1)
+  54:	e5963000 	ldr	r3, [r6]
+  58:	e1530005 	cmp	r3, r5
+  5c:	9a000015 	bls	b8 <init_module+0xb8>
+/home/spirit/repos/lab6/hello.c:59 (discriminator 1)
+  60:	e3530003 	cmp	r3, #3
+  64:	03550002 	cmpeq	r5, #2
+  68:	1a000000 	bne	70 <init_module+0x70>
+/home/spirit/repos/lab6/hello.c:65
+  6c:	e7f001f2 	.word	0xe7f001f2
+kmalloc():
+/home/spirit/repos/linux-stable/./include/linux/slab.h:515
+  70:	e3a02010 	mov	r2, #16
+  74:	e1a01008 	mov	r1, r8
+  78:	e5970018 	ldr	r0, [r7, #24]
+  7c:	ebfffffe 	bl	0 <kmem_cache_alloc_trace>
+hello_init():
+/home/spirit/repos/lab6/hello.c:65
+  80:	e2504000 	subs	r4, r0, #0
+  84:	0afffff8 	beq	6c <init_module+0x6c>
+/home/spirit/repos/lab6/hello.c:67 (discriminator 2)
+  88:	ebfffffe 	bl	0 <ktime_get>
+list_add_tail():
+/home/spirit/repos/linux-stable/./include/linux/list.h:93 (discriminator 2)
+  8c:	e5963008 	ldr	r3, [r6, #8]
+__list_add():
+/home/spirit/repos/linux-stable/./include/linux/list.h:64 (discriminator 2)
+  90:	e5849000 	str	r9, [r4]
+hello_init():
+/home/spirit/repos/lab6/hello.c:54 (discriminator 2)
+  94:	e2855001 	add	r5, r5, #1
+__list_add():
+/home/spirit/repos/linux-stable/./include/linux/list.h:63 (discriminator 2)
+  98:	e5864008 	str	r4, [r6, #8]
+/home/spirit/repos/linux-stable/./include/linux/list.h:65 (discriminator 2)
+  9c:	e5843004 	str	r3, [r4, #4]
+hello_init():
+/home/spirit/repos/lab6/hello.c:67 (discriminator 2)
+  a0:	e1c400f8 	strd	r0, [r4, #8]
+/home/spirit/repos/lab6/hello.c:70 (discriminator 2)
+  a4:	e3000000 	movw	r0, #0
+__write_once_size():
+/home/spirit/repos/linux-stable/./include/linux/compiler.h:289 (discriminator 2)
+  a8:	e5834000 	str	r4, [r3]
+hello_init():
+/home/spirit/repos/lab6/hello.c:70 (discriminator 2)
+  ac:	e3400000 	movt	r0, #0
+  b0:	ebfffffe 	bl	0 <printk>
+  b4:	eaffffe6 	b	54 <init_module+0x54>
+/home/spirit/repos/lab6/hello.c:74
+  b8:	e3a00000 	mov	r0, #0
+  bc:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
+  c0:	00000004 	.word	0x00000004
+spirit@Mariia:~/repos/lab6$ arm-linux-gnueabihf-addr2line -e hello.o -j .init.text -f -p 0x100arm-linux-gnueabihf-addr2line -e hello.o -j .init.text -f -p 0x100
+?? ??:0
+spirit@Mariia:~/repos/lab6$ mkdir -p "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6"mkdir -p "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6"
+spirit@Mariia:~/repos/lab6$ cp ~/repos/lab6/hello.c "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6/"cp ~/repos/lab6/hello.c "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6/"
+spirit@Mariia:~/repos/lab6$ cp ~/repos/lab6/Makefile "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6/"cp ~/repos/lab6/Makefile "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6/"
+spirit@Mariia:~/repos/lab6$ ls -la "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6"ls -la "/mnt/c/KPI/3 year/5_semestr/АК2/Comp_Arch2/Lab6"
+total 4
+drwxrwxrwx 1 spirit spirit  512 Oct 28 19:43 .
+drwxrwxrwx 1 spirit spirit  512 Oct 28 19:09 ..
+-rwxrwxrwx 1 spirit spirit  177 Oct 28 19:43 Makefile
+-rwxrwxrwx 1 spirit spirit 1864 Oct 28 19:43 hello.c
+spirit@Mariia:~/repos/lab6$ exitexit
+exit
+
+Script done on 2026-10-28 19:44:15+00:00 [COMMAND_EXIT_CODE="0"]
